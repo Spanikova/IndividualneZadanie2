@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinishLine.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,8 +24,10 @@ namespace FinishLine
         public NewRunnerWindow()
         {
             InitializeComponent();
-            FinishLine.Core.Logika.ReadCsvFile();
-            cmbCountry.DataSource = FinishLine.Core.Logika._countries;
+            FileRW.ReadCsvFile();
+            cmbCountry.DataSource = FileRW._countries.Values.ToList();
+            cmbCountry.DisplayMember = "SlovakShortName";
+            cmbCountry.ValueMember = "SlovakShortName";
             cmbCountry.SelectedIndex = 0;
         }
 

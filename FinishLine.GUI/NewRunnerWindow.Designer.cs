@@ -61,7 +61,7 @@
             // 
             this.txtRunnername.Location = new System.Drawing.Point(116, 31);
             this.txtRunnername.Name = "txtRunnername";
-            this.txtRunnername.Size = new System.Drawing.Size(100, 20);
+            this.txtRunnername.Size = new System.Drawing.Size(247, 20);
             this.txtRunnername.TabIndex = 1;
             // 
             // lblCountry
@@ -78,13 +78,13 @@
             this.cmbCountry.FormattingEnabled = true;
             this.cmbCountry.Location = new System.Drawing.Point(116, 66);
             this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(100, 21);
+            this.cmbCountry.Size = new System.Drawing.Size(247, 21);
             this.cmbCountry.TabIndex = 3;
             // 
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(25, 112);
+            this.lblAge.Location = new System.Drawing.Point(60, 114);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(26, 13);
             this.lblAge.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             // numAge
             // 
-            this.numAge.Location = new System.Drawing.Point(116, 110);
+            this.numAge.Location = new System.Drawing.Point(116, 112);
             this.numAge.Maximum = new decimal(new int[] {
             150,
             0,
@@ -104,7 +104,7 @@
             0,
             0});
             this.numAge.Name = "numAge";
-            this.numAge.Size = new System.Drawing.Size(42, 20);
+            this.numAge.Size = new System.Drawing.Size(56, 20);
             this.numAge.TabIndex = 5;
             this.numAge.Value = new decimal(new int[] {
             1,
@@ -115,7 +115,7 @@
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(25, 155);
+            this.lblSex.Location = new System.Drawing.Point(220, 112);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(48, 13);
             this.lblSex.TabIndex = 6;
@@ -146,7 +146,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(28, 254);
+            this.btnCancel.Location = new System.Drawing.Point(177, 244);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 9;
@@ -155,7 +155,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(141, 254);
+            this.btnOk.Location = new System.Drawing.Point(288, 244);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 10;
@@ -166,7 +166,7 @@
             // lblRegNumber
             // 
             this.lblRegNumber.AutoSize = true;
-            this.lblRegNumber.Location = new System.Drawing.Point(25, 215);
+            this.lblRegNumber.Location = new System.Drawing.Point(12, 154);
             this.lblRegNumber.Name = "lblRegNumber";
             this.lblRegNumber.Size = new System.Drawing.Size(90, 13);
             this.lblRegNumber.TabIndex = 11;
@@ -174,7 +174,7 @@
             // 
             // numRegNumber
             // 
-            this.numRegNumber.Location = new System.Drawing.Point(121, 213);
+            this.numRegNumber.Location = new System.Drawing.Point(116, 152);
             this.numRegNumber.Maximum = new decimal(new int[] {
             999,
             0,
@@ -198,7 +198,7 @@
             // 
             this.grpSex.Controls.Add(this.rdbtnMale);
             this.grpSex.Controls.Add(this.rdbtnFemale);
-            this.grpSex.Location = new System.Drawing.Point(116, 136);
+            this.grpSex.Location = new System.Drawing.Point(274, 93);
             this.grpSex.Name = "grpSex";
             this.grpSex.Size = new System.Drawing.Size(79, 65);
             this.grpSex.TabIndex = 13;
@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(251, 322);
+            this.ClientSize = new System.Drawing.Size(397, 322);
             this.Controls.Add(this.grpSex);
             this.Controls.Add(this.numRegNumber);
             this.Controls.Add(this.lblRegNumber);
