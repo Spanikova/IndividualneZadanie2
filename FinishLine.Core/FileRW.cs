@@ -33,8 +33,8 @@ namespace FinishLine.Core
                     Country country = new Country(record[_countryCode], record[_slovakShortName], record[_englishShortName], record[_officialShortName]);
                     _countries.Add(country);
                 }
-            }
-           
+            }    
         }
+
     }
 }

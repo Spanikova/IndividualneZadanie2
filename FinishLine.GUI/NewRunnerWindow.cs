@@ -19,21 +19,21 @@ namespace FinishLine
         public int Age { get; set; }
         public string Sex { get; set; }
         public int RegNumber { get; set; }
-        Country country = new Country();
+
         
         public NewRunnerWindow()
         {
-            InitializeComponent();
-            FileRW.ReadCsvFile();
-            cmbCountry.DataSource = FileRW._countries;
-            cmbCountry.DisplayMember = nameof(country.SlovakShortName);
-            cmbCountry.ValueMember = nameof(country.SlovakShortName);
-            cmbCountry.SelectedIndex = 0;
+            InitializeComponent();            
         }
 
         private void NewRunnerWindow_Load(object sender, EventArgs e)
         {
-
+            FileRW.ReadCsvFile();
+            cmbCountry.DataSource = FileRW._countries;
+            cmbCountry.DisplayMember = nameof(Country.SlovakShortName);
+            cmbCountry.ValueMember = nameof(Country.SlovakShortName);
+            cmbCountry.SelectedIndex = 0;
+            numRegNumber.Value = RaceLogic.GetRegNumber();
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -50,6 +50,8 @@ namespace FinishLine
                 Sex = rdbtnFemale.Text;
             }
             RegNumber = (int)numRegNumber.Value;
+            Runner runner = new Runner(RunnerName, CountryName, Age, Sex);
+            RaceLogic.AddRunner(RegNumber, runner);
             DialogResult = DialogResult.OK;
         }
 

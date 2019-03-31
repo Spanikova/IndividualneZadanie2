@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="Country.cs" />
     <Compile Include="FileRW.cs" />
-    <Compile Include="Logika.cs" />
+    <Compile Include="RaceLogic.cs" />
     <Compile Include="Race.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runner.cs" />
