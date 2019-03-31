@@ -184,6 +184,7 @@
             // 
             // cmbRegNumber
             // 
+            this.cmbRegNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRegNumber.FormattingEnabled = true;
             this.cmbRegNumber.Location = new System.Drawing.Point(99, 7);
             this.cmbRegNumber.Name = "cmbRegNumber";

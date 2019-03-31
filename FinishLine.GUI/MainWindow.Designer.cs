@@ -33,10 +33,10 @@
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRunner = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.menuChangeDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRunnersList = new System.Windows.Forms.ToolStripMenuItem();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,8 +64,7 @@
             this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             menuNewRace,
             this.menuOpen,
-            this.menuSave,
-            this.menuQuit});
+            this.menuSave});
             this.menuFile.Name = "menuFile";
             this.menuFile.Size = new System.Drawing.Size(50, 20);
             this.menuFile.Text = "Súbor";
@@ -82,17 +81,12 @@
             this.menuSave.Size = new System.Drawing.Size(138, 22);
             this.menuSave.Text = "Uložiť";
             // 
-            // menuQuit
-            // 
-            this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(138, 22);
-            this.menuQuit.Text = "Koniec";
-            // 
             // menuRunner
             // 
             this.menuRunner.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuRegister,
-            this.menuChangeDelete});
+            this.menuChangeDelete,
+            this.menuRunnersList});
             this.menuRunner.Name = "menuRunner";
             this.menuRunner.Size = new System.Drawing.Size(46, 20);
             this.menuRunner.Text = "Bežci";
@@ -111,6 +105,13 @@
             this.menuChangeDelete.Text = "Zmazať / Upraviť";
             this.menuChangeDelete.Click += new System.EventHandler(this.menuChangeDelete_Click);
             // 
+            // menuRunnersList
+            // 
+            this.menuRunnersList.Name = "menuRunnersList";
+            this.menuRunnersList.Size = new System.Drawing.Size(180, 22);
+            this.menuRunnersList.Text = "Zobraziť zoznam";
+            this.menuRunnersList.Click += new System.EventHandler(this.menuRunnersList_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +121,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preteky";
+            this.Activated += new System.EventHandler(this.MainWindow_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -135,9 +137,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuRunner;
         private System.Windows.Forms.ToolStripMenuItem menuOpen;
         private System.Windows.Forms.ToolStripMenuItem menuSave;
-        private System.Windows.Forms.ToolStripMenuItem menuQuit;
         private System.Windows.Forms.ToolStripMenuItem menuRegister;
         private System.Windows.Forms.ToolStripMenuItem menuChangeDelete;
+        private System.Windows.Forms.ToolStripMenuItem menuRunnersList;
     }
 }
 

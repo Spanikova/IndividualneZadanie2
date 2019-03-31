@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinishLine.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace FinishLine
 
         private void Form1_Load(object sender, EventArgs e)
         {
-  
+            
         }
 
         private void menuNewRace_Click(object sender, EventArgs e)
@@ -38,6 +39,24 @@ namespace FinishLine
         {
             ChangeRunnerWindow changeRunner = new ChangeRunnerWindow();
             changeRunner.ShowDialog();
+        }
+
+        private void menuRunnersList_Click(object sender, EventArgs e)
+        {
+            RunnersListWindow runnersList = new RunnersListWindow();
+            runnersList.ShowDialog();
+        }
+
+        private void MainWindow_Activated(object sender, EventArgs e)
+        {
+            if (RaceLogic._runners.Count == 0)
+            {
+                menuRunnersList.Enabled = false;
+            }
+            else
+            {
+                menuRunnersList.Enabled = true;
+            }
         }
     }
 }

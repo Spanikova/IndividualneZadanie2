@@ -37,5 +37,23 @@ namespace FinishLine.Core
         {
             _runners[regNumber] = runner;
         }
+
+        public static string RegNrToString(int regNumber)
+        {
+            string strRegNr = "";
+            if(regNumber < 10)
+            {
+                strRegNr = $"00{regNumber}";
+            }
+            else if (regNumber >= 10 && regNumber < 100)
+            {
+                strRegNr = $"0{regNumber}";
+            }
+            else
+            {
+                strRegNr = regNumber.ToString();
+            }
+            return strRegNr;
+        }
     }
 }
