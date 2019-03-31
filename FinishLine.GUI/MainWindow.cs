@@ -58,5 +58,10 @@ namespace FinishLine
                 menuRunnersList.Enabled = true;
             }
         }
+
+        private void dataGridViewGrouper1_DisplayGroup(object sender, Subro.Controls.GroupDisplayEventArgs e)
+        {
+
+        }
     }
 }

@@ -70,10 +70,12 @@
             // 
             // ColName
             // 
-            this.ColName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ColName.HeaderText = "Meno";
             this.ColName.Name = "ColName";
             this.ColName.ReadOnly = true;
+            this.ColName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ColName.Width = 59;
             // 
             // ColCountry
             // 
@@ -81,6 +83,7 @@
             this.ColCountry.HeaderText = "Krajina";
             this.ColCountry.Name = "ColCountry";
             this.ColCountry.ReadOnly = true;
+            this.ColCountry.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColAge
             // 
