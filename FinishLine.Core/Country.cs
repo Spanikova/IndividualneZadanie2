@@ -14,15 +14,16 @@ namespace FinishLine.Core
         public string OfficialShortName { get; set; }
         public string DependencyOf { get; set; }
 
-        public Country(string slovakShortName, string englishShortName, string officialShortName)
+        public Country(string countryCode, string slovakShortName, string englishShortName, string officialShortName)
         {
+            CountryCode = countryCode;
             SlovakShortName = slovakShortName;
             EnglishShortName = englishShortName;
             OfficialShortName = officialShortName;
         }
 
-        
-
-
+        public Country()
+        {
+        }
     }
 }

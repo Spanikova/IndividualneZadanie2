@@ -15,19 +15,19 @@ namespace FinishLine
     public partial class NewRunnerWindow : Form
     {
         public string RunnerName { get; set; }
-        public string Country { get; set; }
+        public string CountryName { get; set; }
         public int Age { get; set; }
         public string Sex { get; set; }
         public int RegNumber { get; set; }
-
+        Country country = new Country();
         
         public NewRunnerWindow()
         {
             InitializeComponent();
             FileRW.ReadCsvFile();
-            cmbCountry.DataSource = FileRW._countries.Values.ToList();
-            cmbCountry.DisplayMember = "SlovakShortName";
-            cmbCountry.ValueMember = "SlovakShortName";
+            cmbCountry.DataSource = FileRW._countries;
+            cmbCountry.DisplayMember = nameof(country.SlovakShortName);
+            cmbCountry.ValueMember = nameof(country.SlovakShortName);
             cmbCountry.SelectedIndex = 0;
         }
 
@@ -39,7 +39,7 @@ namespace FinishLine
         private void btnOk_Click(object sender, EventArgs e)
         {
             RunnerName = txtRunnername.Text;
-            Country = cmbCountry.SelectedValue.ToString();
+            CountryName = cmbCountry.SelectedValue.ToString();
             Age = (int)numAge.Value;
             if (rdbtnMale.Checked)
             {
