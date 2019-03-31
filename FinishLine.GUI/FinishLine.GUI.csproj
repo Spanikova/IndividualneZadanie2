@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeRunnerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeRunnerWindow.Designer.cs">
+      <DependentUpon>ChangeRunnerWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Subro.Controls.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="ChangeRunnerWindow.resx">
+      <DependentUpon>ChangeRunnerWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

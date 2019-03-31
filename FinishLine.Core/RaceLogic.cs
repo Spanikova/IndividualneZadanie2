@@ -27,5 +27,15 @@ namespace FinishLine.Core
         {            
             _runners.Add(regNumber, runner);
         }
+
+        public static void DeleteRunner (int regNumber)
+        {
+            _runners.Remove(regNumber);
+        }
+
+        public static void ChangeRunner(int regNumber, Runner runner)
+        {
+            _runners[regNumber] = runner;
+        }
     }
 }

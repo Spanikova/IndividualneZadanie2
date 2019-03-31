@@ -31,11 +31,12 @@
             System.Windows.Forms.ToolStripMenuItem menuNewRace;
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuRunner = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRunner = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegister = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuChangeDelete = new System.Windows.Forms.ToolStripMenuItem();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +44,7 @@
             // menuNewRace
             // 
             menuNewRace.Name = "menuNewRace";
-            menuNewRace.Size = new System.Drawing.Size(152, 22);
+            menuNewRace.Size = new System.Drawing.Size(138, 22);
             menuNewRace.Text = "Nový pretek";
             menuNewRace.Click += new System.EventHandler(this.menuNewRace_Click);
             // 
@@ -69,38 +70,46 @@
             this.menuFile.Size = new System.Drawing.Size(50, 20);
             this.menuFile.Text = "Súbor";
             // 
-            // menuRunner
-            // 
-            this.menuRunner.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuRegister});
-            this.menuRunner.Name = "menuRunner";
-            this.menuRunner.Size = new System.Drawing.Size(46, 20);
-            this.menuRunner.Text = "Bežci";
-            // 
             // menuOpen
             // 
             this.menuOpen.Name = "menuOpen";
-            this.menuOpen.Size = new System.Drawing.Size(152, 22);
+            this.menuOpen.Size = new System.Drawing.Size(138, 22);
             this.menuOpen.Text = "Otvoriť";
             // 
             // menuSave
             // 
             this.menuSave.Name = "menuSave";
-            this.menuSave.Size = new System.Drawing.Size(152, 22);
+            this.menuSave.Size = new System.Drawing.Size(138, 22);
             this.menuSave.Text = "Uložiť";
             // 
             // menuQuit
             // 
             this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(152, 22);
+            this.menuQuit.Size = new System.Drawing.Size(138, 22);
             this.menuQuit.Text = "Koniec";
+            // 
+            // menuRunner
+            // 
+            this.menuRunner.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuRegister,
+            this.menuChangeDelete});
+            this.menuRunner.Name = "menuRunner";
+            this.menuRunner.Size = new System.Drawing.Size(46, 20);
+            this.menuRunner.Text = "Bežci";
             // 
             // menuRegister
             // 
             this.menuRegister.Name = "menuRegister";
-            this.menuRegister.Size = new System.Drawing.Size(152, 22);
+            this.menuRegister.Size = new System.Drawing.Size(180, 22);
             this.menuRegister.Text = "Registrácia";
             this.menuRegister.Click += new System.EventHandler(this.menuRegister_Click);
+            // 
+            // menuChangeDelete
+            // 
+            this.menuChangeDelete.Name = "menuChangeDelete";
+            this.menuChangeDelete.Size = new System.Drawing.Size(180, 22);
+            this.menuChangeDelete.Text = "Zmazať / Upraviť";
+            this.menuChangeDelete.Click += new System.EventHandler(this.menuChangeDelete_Click);
             // 
             // MainWindow
             // 
@@ -128,6 +137,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuSave;
         private System.Windows.Forms.ToolStripMenuItem menuQuit;
         private System.Windows.Forms.ToolStripMenuItem menuRegister;
+        private System.Windows.Forms.ToolStripMenuItem menuChangeDelete;
     }
 }
 

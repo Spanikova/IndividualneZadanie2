@@ -12,7 +12,6 @@ namespace FinishLine.Core
         public string Country { get; set; }
         public int Age { get; set; }
         public string Sex { get; set; }
-        public int RegNumber { get; set; }
 
         public Runner(string runnerName, string country, int age, string sex)
         {

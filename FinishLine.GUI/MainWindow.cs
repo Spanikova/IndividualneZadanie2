@@ -33,5 +33,11 @@ namespace FinishLine
             NewRunnerWindow newRunner = new NewRunnerWindow();
             newRunner.ShowDialog();
         }
+
+        private void menuChangeDelete_Click(object sender, EventArgs e)
+        {
+            ChangeRunnerWindow changeRunner = new ChangeRunnerWindow();
+            changeRunner.ShowDialog();
+        }
     }
 }
