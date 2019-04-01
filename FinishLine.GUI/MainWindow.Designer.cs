@@ -67,6 +67,7 @@
             this.lblCurrentRank = new System.Windows.Forms.Label();
             this.pnlEndRace = new System.Windows.Forms.Panel();
             this.lblEndRace = new System.Windows.Forms.Label();
+            this.menuSaveList = new System.Windows.Forms.ToolStripMenuItem();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.pnlButtonsStartStop.SuspendLayout();
@@ -124,7 +125,8 @@
             this.menuRunner.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuRegister,
             this.menuChangeDelete,
-            this.menuRunnersList});
+            this.menuRunnersList,
+            this.menuSaveList});
             this.menuRunner.Name = "menuRunner";
             this.menuRunner.Size = new System.Drawing.Size(46, 20);
             this.menuRunner.Text = "Bežci";
@@ -132,21 +134,21 @@
             // menuRegister
             // 
             this.menuRegister.Name = "menuRegister";
-            this.menuRegister.Size = new System.Drawing.Size(164, 22);
+            this.menuRegister.Size = new System.Drawing.Size(180, 22);
             this.menuRegister.Text = "Registrácia";
             this.menuRegister.Click += new System.EventHandler(this.menuRegister_Click);
             // 
             // menuChangeDelete
             // 
             this.menuChangeDelete.Name = "menuChangeDelete";
-            this.menuChangeDelete.Size = new System.Drawing.Size(164, 22);
+            this.menuChangeDelete.Size = new System.Drawing.Size(180, 22);
             this.menuChangeDelete.Text = "Zmazať / Upraviť";
             this.menuChangeDelete.Click += new System.EventHandler(this.menuChangeDelete_Click);
             // 
             // menuRunnersList
             // 
             this.menuRunnersList.Name = "menuRunnersList";
-            this.menuRunnersList.Size = new System.Drawing.Size(164, 22);
+            this.menuRunnersList.Size = new System.Drawing.Size(180, 22);
             this.menuRunnersList.Text = "Zobraziť zoznam";
             this.menuRunnersList.Click += new System.EventHandler(this.menuRunnersList_Click);
             // 
@@ -455,6 +457,13 @@
             this.lblEndRace.TabIndex = 0;
             this.lblEndRace.Text = "Preteky bol ukončené";
             // 
+            // menuSaveList
+            // 
+            this.menuSaveList.Name = "menuSaveList";
+            this.menuSaveList.Size = new System.Drawing.Size(180, 22);
+            this.menuSaveList.Text = "Uložiť zoznam";
+            this.menuSaveList.Click += new System.EventHandler(this.menuSaveList_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +539,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColRunnerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCountry;
+        private System.Windows.Forms.ToolStripMenuItem menuSaveList;
     }
 }
 

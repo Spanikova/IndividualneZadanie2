@@ -121,5 +121,18 @@ namespace FinishLine
             pnlEndRace.Visible = true;
             pnlRunThroughFinish.Visible = false;
         }
+
+        private void menuSaveList_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.InitialDirectory = FileRW.ProjectPath + FileRW.SAVE_PATH;
+            saveFile.Filter = "Text files (*.txt)|*.txt";
+            saveFile.FileName = "zoznam_bezcov.txt";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                FileRW.WriteRunnersListToFile(saveFile.FileName);
+            }
+            
+        }
     }
 }
