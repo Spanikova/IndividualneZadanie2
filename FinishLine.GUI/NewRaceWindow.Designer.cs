@@ -101,7 +101,7 @@
             this.numLapCount.Size = new System.Drawing.Size(60, 20);
             this.numLapCount.TabIndex = 4;
             this.numLapCount.Value = new decimal(new int[] {
-            1,
+            50,
             0,
             0,
             0});
@@ -119,7 +119,7 @@
             // 
             this.numWinnersCount.Location = new System.Drawing.Point(130, 101);
             this.numWinnersCount.Minimum = new decimal(new int[] {
-            3,
+            1,
             0,
             0,
             0});
@@ -185,7 +185,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "NewRaceWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Nový pretek";
+            this.Text = "Nové preteky";
             this.Load += new System.EventHandler(this.NewRaceWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numLapLength)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLapCount)).EndInit();

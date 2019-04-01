@@ -11,6 +11,7 @@ namespace FinishLine.Core
 {
     public static class RaceLogic
     {
+        public static RaceProperties _currentRace = new RaceProperties();
         public static Dictionary<int, Runner> _runners = new Dictionary<int, Runner>();
         public static Dictionary<int, LapStatistics> _runnerTimes = new Dictionary<int, LapStatistics>();
         public static Dictionary<int, Winner> _winners = new Dictionary<int, Winner>();
@@ -82,13 +83,38 @@ namespace FinishLine.Core
         {
             _place++;
             Winner winner = new Winner();
-            winner.RegNr = regNr;
+            winner.Place = _place;
             winner.RunnerName = _runners[regNr].RunnerName;
             winner.Country = _runners[regNr].Country;
             winner.TotalTime = _runnerTimes[regNr].TotalTime;
-            _winners.Add(_place, winner);
+            _winners.Add(regNr, winner);
             return winner;
         }
-        
+
+        public static bool CheckRegNrRace(int regNr )
+        {
+            if (_runners.ContainsKey(regNr) && !_winners.ContainsKey(regNr))
+            {               
+                return true;
+            }
+            else
+            {
+                return false;
+            }          
+        }
+
+        public static bool EnoughWinners()
+        {
+            if (_winners.Keys.Count == _currentRace.NumOfWinners)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }

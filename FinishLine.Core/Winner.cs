@@ -8,6 +8,7 @@ namespace FinishLine.Core
 {
     public class Winner
     {
+        public int Place { get; set; }
         public int RegNr { get; set; }
         public string RunnerName { get; set; }
         public TimeSpan TotalTime { get; set; }

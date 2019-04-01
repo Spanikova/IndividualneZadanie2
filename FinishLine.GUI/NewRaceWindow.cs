@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinishLine.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace FinishLine
 
         private void NewRaceWindow_Load(object sender, EventArgs e)
         {
-
+            numWinnersCount.Maximum = RaceLogic._runners.Count;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace FinishLine
             LapLength = (int) numLapLength.Value;
             LapCount = (int)numLapCount.Value;
             NumOfWinners = (int)numWinnersCount.Value;
-            MainWindow._currentRace = new Core.RaceProperties(LapLength, LapCount, NumOfWinners);
+            RaceLogic._currentRace = new Core.RaceProperties(LapLength, LapCount, NumOfWinners);
             MainWindow.RaceIsSelected = true;
             DialogResult =  DialogResult.OK;
         }

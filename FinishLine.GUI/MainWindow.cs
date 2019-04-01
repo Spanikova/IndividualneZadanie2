@@ -13,7 +13,7 @@ namespace FinishLine
 {
     public partial class MainWindow : Form
     {
-        public static RaceProperties _currentRace = new RaceProperties();
+        
         public static bool RaceIsSelected = false;
 
 
@@ -68,10 +68,10 @@ namespace FinishLine
                 btnStart.Visible = true;
                 btnFinish.Visible = true;
                 pnlRaceProperties.Visible = true;
-                lblRndLength.Text = $"Dĺžka kola: {_currentRace.LapLength} km";
-                lblRndCount.Text = $"Počet kôl: {_currentRace.LapCount}";
-                lblRaceLength.Text = $"Dĺžka preteku: {_currentRace.LapLength*_currentRace.LapCount} km";
-                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {_currentRace.NumOfWinners}";
+                lblRndLength.Text = $"Dĺžka kola: {RaceLogic._currentRace.LapLength} km";
+                lblRndCount.Text = $"Počet kôl: {RaceLogic._currentRace.LapCount}";
+                lblRaceLength.Text = $"Dĺžka pretekov: {RaceLogic._currentRace.LapLength*RaceLogic._currentRace.LapCount} km";
+                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {RaceLogic._currentRace.NumOfWinners}";
             }
         }
 
@@ -79,7 +79,7 @@ namespace FinishLine
         {
             btnStart.Enabled = false;
             btnFinish.Enabled = true;
-            _currentRace.StartTime = DateTime.Now;
+            RaceLogic._currentRace.StartTime = DateTime.Now;
             RaceLogic.StartTime = DateTime.Now;
             pnlRunThroughFinish.Visible = true;
             pnlTables.Visible = true;
@@ -88,25 +88,38 @@ namespace FinishLine
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            btnFinish.Enabled = false;
+            EndRace();
         }
 
         private void btnAcceptRunnerNr_Click(object sender, EventArgs e)
-        {
+        {           
             int runnerRegNr = (int)numRunnerRegNr.Value;
-            DateTime finishLineTime = DateTime.Now;            
-            RaceLogic.AddLapTime(runnerRegNr, finishLineTime);
-            var lastLap = RaceLogic._runnerTimes[runnerRegNr];
-            dtGrdRaceRun.Rows.Add(runnerRegNr, lastLap.LapNr, lastLap.LapTime, lastLap.TotalTime);
-            dtGrdRaceRun.Sort(ColNrOfLaps, ListSortDirection.Descending);
-            if(lastLap.LapNr == _currentRace.LapCount)
+            bool runnerRuns = RaceLogic.CheckRegNrRace(runnerRegNr);
+            if (runnerRuns)
             {
-                Winner winner = RaceLogic.AddWinner(runnerRegNr);
-                int place = RaceLogic._place;
-                dtGrdRaceResults.Rows.Add(place, winner.RegNr, winner.RunnerName, winner.TotalTime, winner.Country);
-            }
+                DateTime finishLineTime = DateTime.Now;
+                RaceLogic.AddLapTime(runnerRegNr, finishLineTime);
+                var lastLap = RaceLogic._runnerTimes[runnerRegNr];
+                dtGrdRaceRun.Rows.Add(runnerRegNr, RaceLogic._runners[runnerRegNr].RunnerName, lastLap.LapNr, lastLap.LapTime, lastLap.TotalTime);
+                dtGrdRaceRun.Sort(ColNrOfLaps, ListSortDirection.Descending);
+                if (lastLap.LapNr == RaceLogic._currentRace.LapCount)
+                {
+                    Winner winner = RaceLogic.AddWinner(runnerRegNr);
+                    int place = RaceLogic._place;
+                    dtGrdRaceResults.Rows.Add(winner.Place, runnerRegNr, winner.RunnerName, winner.TotalTime, winner.Country);
+                    if (RaceLogic.EnoughWinners())
+                    {
+                        EndRace();
+                    }
+                }                
+            }            
+        }
 
-            
+        private void EndRace()
+        {
+            btnFinish.Enabled = false;
+            pnlEndRace.Visible = true;
+            pnlRunThroughFinish.Visible = false;
         }
     }
 }
