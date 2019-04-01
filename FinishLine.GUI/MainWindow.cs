@@ -81,7 +81,6 @@ namespace FinishLine
             btnFinish.Enabled = true;
             _currentRace.StartTime = DateTime.Now;
             RaceLogic.StartTime = DateTime.Now;
-            lblStartTime.Text = $"Čas štartu: {_currentRace.StartTime}";
             pnlRunThroughFinish.Visible = true;
             pnlTables.Visible = true;
 

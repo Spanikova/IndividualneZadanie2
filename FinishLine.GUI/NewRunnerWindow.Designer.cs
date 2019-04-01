@@ -100,12 +100,12 @@
             // 
             this.numAge.Location = new System.Drawing.Point(111, 92);
             this.numAge.Maximum = new decimal(new int[] {
-            150,
+            120,
             0,
             0,
             0});
             this.numAge.Minimum = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
             0});
@@ -113,7 +113,7 @@
             this.numAge.Size = new System.Drawing.Size(56, 20);
             this.numAge.TabIndex = 5;
             this.numAge.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
             0});
