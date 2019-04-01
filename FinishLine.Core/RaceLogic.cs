@@ -12,7 +12,7 @@ namespace FinishLine.Core
     public static class RaceLogic
     {
         public static Dictionary<int, Runner> _runners = new Dictionary<int, Runner>();
-        public static Dictionary<int, LapTime> _runnerTimes = new Dictionary<int, LapTime>();
+        public static Dictionary<int, LapStatistics> _runnerTimes = new Dictionary<int, LapStatistics>();
         public static DateTime StartTime { get; set; }
 
 
@@ -57,20 +57,25 @@ namespace FinishLine.Core
 
         public static void AddLapTime (int regNr, DateTime finishLineTime)
         {
-            LapTime lastLap = new LapTime();
+            LapStatistics lastLap = new LapStatistics();
             TimeSpan lapTime = finishLineTime - StartTime;
-            lastLap.FinishLineTime = lapTime;
+            lastLap.TotalTime = lapTime;
             lastLap.LapNr = 1;
             if (_runnerTimes.ContainsKey(regNr))
             {
-                LapTime runnerTime = _runnerTimes[regNr];
+                LapStatistics runnerTime = _runnerTimes[regNr];
+                TimeSpan timeToCompare = _runnerTimes[regNr].TotalTime;
                 runnerTime.LapNr++;
-                runnerTime.FinishLineTime = lapTime;
+                runnerTime.TotalTime = lapTime;
+                runnerTime.LapTime = lapTime - timeToCompare;
             }
             else
             {
+                lastLap.LapTime = lastLap.TotalTime;
                 _runnerTimes.Add(regNr, lastLap);
             }
         }
+
+        
     }
 }

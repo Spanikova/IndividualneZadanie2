@@ -56,7 +56,8 @@
             this.lblRaceLength = new System.Windows.Forms.Label();
             this.ColRegNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNrOfLaps = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLapTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.pnlButtonsStartStop.SuspendLayout();
@@ -277,13 +278,14 @@
             this.dtGrdRaceRun.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColRegNr,
             this.ColNrOfLaps,
-            this.ColTime});
+            this.ColLapTime,
+            this.ColTotalTime});
             this.dtGrdRaceRun.Dock = System.Windows.Forms.DockStyle.Left;
             this.dtGrdRaceRun.Location = new System.Drawing.Point(0, 0);
             this.dtGrdRaceRun.Name = "dtGrdRaceRun";
             this.dtGrdRaceRun.ReadOnly = true;
             this.dtGrdRaceRun.RowHeadersVisible = false;
-            this.dtGrdRaceRun.Size = new System.Drawing.Size(303, 456);
+            this.dtGrdRaceRun.Size = new System.Drawing.Size(404, 456);
             this.dtGrdRaceRun.TabIndex = 7;
             // 
             // dtGrdRaceResults
@@ -327,11 +329,17 @@
             this.ColNrOfLaps.Name = "ColNrOfLaps";
             this.ColNrOfLaps.ReadOnly = true;
             // 
-            // ColTime
+            // ColLapTime
             // 
-            this.ColTime.HeaderText = "Celkový čas";
-            this.ColTime.Name = "ColTime";
-            this.ColTime.ReadOnly = true;
+            this.ColLapTime.HeaderText = "Čas kola";
+            this.ColLapTime.Name = "ColLapTime";
+            this.ColLapTime.ReadOnly = true;
+            // 
+            // ColTotalTime
+            // 
+            this.ColTotalTime.HeaderText = "Celkový čas";
+            this.ColTotalTime.Name = "ColTotalTime";
+            this.ColTotalTime.ReadOnly = true;
             // 
             // MainWindow
             // 
@@ -393,7 +401,8 @@
         private System.Windows.Forms.Label lblRaceLength;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColRegNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNrOfLaps;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLapTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotalTime;
     }
 }
 

@@ -98,8 +98,9 @@ namespace FinishLine
             DateTime finishLineTime = DateTime.Now;            
             RaceLogic.AddLapTime(runnerRegNr, finishLineTime);
             var lastLap = RaceLogic._runnerTimes[runnerRegNr];
-            dtGrdRaceRun.Rows.Add(runnerRegNr, lastLap.LapNr, lastLap.FinishLineTime);
-            dtGrdRaceRun.Refresh();
+            dtGrdRaceRun.Rows.Add(runnerRegNr, lastLap.LapNr, lastLap.LapTime, lastLap.TotalTime);
+            dtGrdRaceRun.Sort(ColNrOfLaps, ListSortDirection.Descending);
+            
         }
     }
 }

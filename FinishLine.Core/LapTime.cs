@@ -6,26 +6,28 @@ using System.Threading.Tasks;
 
 namespace FinishLine.Core
 {
-    public class LapTime
+    public class LapStatistics
     {
         public int RunnerRegNr { get; set; }
         public int LapNr { get; set; }
-        public TimeSpan FinishLineTime { get; set; }
+        public TimeSpan TotalTime { get; set; }
+        public TimeSpan LapTime { get; set; }
 
-        public LapTime(int runnerRegNr, int lapNr, TimeSpan finishLineTime)
+        public LapStatistics(int runnerRegNr, int lapNr, TimeSpan finishLineTime, TimeSpan lapTime)
         {
             RunnerRegNr = runnerRegNr;
             LapNr = lapNr;
-            FinishLineTime = finishLineTime;
+            TotalTime = finishLineTime;
+            LapTime = lapTime;
         }
 
-        public LapTime(int lapNr, TimeSpan finishLineTime)
+        public LapStatistics(int lapNr, TimeSpan finishLineTime)
         {
             LapNr = lapNr;
-            FinishLineTime = finishLineTime;
+            TotalTime = finishLineTime;
         }
 
-        public LapTime()
+        public LapStatistics()
         {
         }
     }
