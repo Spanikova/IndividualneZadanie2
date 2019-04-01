@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblRoundLength = new System.Windows.Forms.Label();
-            this.numRoundLength = new System.Windows.Forms.NumericUpDown();
+            this.lblLapLength = new System.Windows.Forms.Label();
+            this.numLapLength = new System.Windows.Forms.NumericUpDown();
             this.lblM = new System.Windows.Forms.Label();
-            this.lblRoundCount = new System.Windows.Forms.Label();
-            this.numRoundCount = new System.Windows.Forms.NumericUpDown();
+            this.lblLapCount = new System.Windows.Forms.Label();
+            this.numLapCount = new System.Windows.Forms.NumericUpDown();
             this.lblWinnersCount = new System.Windows.Forms.Label();
             this.numWinnersCount = new System.Windows.Forms.NumericUpDown();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.numRoundLength)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRoundCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLapLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLapCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWinnersCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblRoundLength
+            // lblLapLength
             // 
-            this.lblRoundLength.AutoSize = true;
-            this.lblRoundLength.Location = new System.Drawing.Point(12, 13);
-            this.lblRoundLength.Name = "lblRoundLength";
-            this.lblRoundLength.Size = new System.Drawing.Size(93, 13);
-            this.lblRoundLength.TabIndex = 0;
-            this.lblRoundLength.Text = "Dĺžka kola  (v km)";
+            this.lblLapLength.AutoSize = true;
+            this.lblLapLength.Location = new System.Drawing.Point(12, 13);
+            this.lblLapLength.Name = "lblLapLength";
+            this.lblLapLength.Size = new System.Drawing.Size(93, 13);
+            this.lblLapLength.TabIndex = 0;
+            this.lblLapLength.Text = "Dĺžka kola  (v km)";
             // 
-            // numRoundLength
+            // numLapLength
             // 
-            this.numRoundLength.Location = new System.Drawing.Point(130, 11);
-            this.numRoundLength.Minimum = new decimal(new int[] {
+            this.numLapLength.Location = new System.Drawing.Point(130, 11);
+            this.numLapLength.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numRoundLength.Name = "numRoundLength";
-            this.numRoundLength.Size = new System.Drawing.Size(60, 20);
-            this.numRoundLength.TabIndex = 1;
-            this.numRoundLength.Value = new decimal(new int[] {
+            this.numLapLength.Name = "numLapLength";
+            this.numLapLength.Size = new System.Drawing.Size(60, 20);
+            this.numLapLength.TabIndex = 1;
+            this.numLapLength.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -80,27 +80,27 @@
             this.lblM.Size = new System.Drawing.Size(0, 13);
             this.lblM.TabIndex = 2;
             // 
-            // lblRoundCount
+            // lblLapCount
             // 
-            this.lblRoundCount.AutoSize = true;
-            this.lblRoundCount.Location = new System.Drawing.Point(12, 58);
-            this.lblRoundCount.Name = "lblRoundCount";
-            this.lblRoundCount.Size = new System.Drawing.Size(52, 13);
-            this.lblRoundCount.TabIndex = 3;
-            this.lblRoundCount.Text = "Počet kôl";
+            this.lblLapCount.AutoSize = true;
+            this.lblLapCount.Location = new System.Drawing.Point(12, 58);
+            this.lblLapCount.Name = "lblLapCount";
+            this.lblLapCount.Size = new System.Drawing.Size(52, 13);
+            this.lblLapCount.TabIndex = 3;
+            this.lblLapCount.Text = "Počet kôl";
             // 
-            // numRoundCount
+            // numLapCount
             // 
-            this.numRoundCount.Location = new System.Drawing.Point(130, 56);
-            this.numRoundCount.Minimum = new decimal(new int[] {
+            this.numLapCount.Location = new System.Drawing.Point(130, 56);
+            this.numLapCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numRoundCount.Name = "numRoundCount";
-            this.numRoundCount.Size = new System.Drawing.Size(60, 20);
-            this.numRoundCount.TabIndex = 4;
-            this.numRoundCount.Value = new decimal(new int[] {
+            this.numLapCount.Name = "numLapCount";
+            this.numLapCount.Size = new System.Drawing.Size(60, 20);
+            this.numLapCount.TabIndex = 4;
+            this.numLapCount.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -165,11 +165,11 @@
             // 
             this.panel2.Controls.Add(this.numWinnersCount);
             this.panel2.Controls.Add(this.lblWinnersCount);
-            this.panel2.Controls.Add(this.numRoundCount);
-            this.panel2.Controls.Add(this.lblRoundCount);
+            this.panel2.Controls.Add(this.numLapCount);
+            this.panel2.Controls.Add(this.lblLapCount);
             this.panel2.Controls.Add(this.lblM);
-            this.panel2.Controls.Add(this.numRoundLength);
-            this.panel2.Controls.Add(this.lblRoundLength);
+            this.panel2.Controls.Add(this.numLapLength);
+            this.panel2.Controls.Add(this.lblLapLength);
             this.panel2.Location = new System.Drawing.Point(20, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(199, 132);
@@ -187,8 +187,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nový pretek";
             this.Load += new System.EventHandler(this.NewRaceWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numRoundLength)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRoundCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLapLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLapCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWinnersCount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -199,11 +199,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblRoundLength;
-        private System.Windows.Forms.NumericUpDown numRoundLength;
+        private System.Windows.Forms.Label lblLapLength;
+        private System.Windows.Forms.NumericUpDown numLapLength;
         private System.Windows.Forms.Label lblM;
-        private System.Windows.Forms.Label lblRoundCount;
-        private System.Windows.Forms.NumericUpDown numRoundCount;
+        private System.Windows.Forms.Label lblLapCount;
+        private System.Windows.Forms.NumericUpDown numLapCount;
         private System.Windows.Forms.Label lblWinnersCount;
         private System.Windows.Forms.NumericUpDown numWinnersCount;
         private System.Windows.Forms.Button btnOk;

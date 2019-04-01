@@ -12,15 +12,18 @@ namespace FinishLine.Core
     public static class RaceLogic
     {
         public static Dictionary<int, Runner> _runners = new Dictionary<int, Runner>();
-        private static int _regNumber = 1;
+        public static Dictionary<int, LapTime> _runnerTimes = new Dictionary<int, LapTime>();
+        public static DateTime StartTime { get; set; }
+
 
         public static int GetRegNumber()
         {
-            while (_runners.ContainsKey(_regNumber))
+            int regNumber = 1;
+            while (_runners.ContainsKey(regNumber))
             {
-                _regNumber++;
+                regNumber++;
             }
-            return _regNumber;
+            return regNumber;
         }
 
         public static void AddRunner(int regNumber, Runner runner)
@@ -50,6 +53,26 @@ namespace FinishLine.Core
                 strRegNr = $"0{regNumber}";
             }
             return strRegNr;
+        }
+
+        public static void AddLapTime (int regNr, DateTime finishLineTime)
+        {
+            LapTime lastLap = new LapTime();
+            TimeSpan lapTime = finishLineTime - StartTime;
+            lastLap.FinishLineTime = lapTime;
+            lastLap.LapNr = 1;
+            if (_runnerTimes.ContainsKey(regNr))
+            {
+                LapTime runnerTime = _runnerTimes[regNr];
+                runnerTime.LapNr++;
+                runnerTime.FinishLineTime = lapTime;
+            }
+            else
+            {
+                
+                _runnerTimes.Add(regNr, lastLap);
+            }
+            
         }
     }
 }

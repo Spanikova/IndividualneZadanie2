@@ -13,8 +13,9 @@ namespace FinishLine
 {
     public partial class MainWindow : Form
     {
-        public static Race _currentRace = new Race();
+        public static RaceProperties _currentRace = new RaceProperties();
         public static bool RaceIsSelected = false;
+
 
         public MainWindow()
         {
@@ -23,7 +24,7 @@ namespace FinishLine
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void menuNewRace_Click(object sender, EventArgs e)
@@ -67,8 +68,9 @@ namespace FinishLine
                 btnStart.Visible = true;
                 btnFinish.Visible = true;
                 pnlRaceProperties.Visible = true;
-                lblRndLength.Text = $"Dĺžka kola: {_currentRace.RoundLength} km";
-                lblRndCount.Text = $"Počet kôl: {_currentRace.RoundCount}";
+                lblRndLength.Text = $"Dĺžka kola: {_currentRace.LapLength} km";
+                lblRndCount.Text = $"Počet kôl: {_currentRace.LapCount}";
+                lblRaceLength.Text = $"Dĺžka preteku: {_currentRace.LapLength*_currentRace.LapCount} km";
                 lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {_currentRace.NumOfWinners}";
             }
         }
@@ -78,6 +80,7 @@ namespace FinishLine
             btnStart.Enabled = false;
             btnFinish.Enabled = true;
             _currentRace.StartTime = DateTime.Now;
+            RaceLogic.StartTime = DateTime.Now;
             lblStartTime.Text = $"Čas štartu: {_currentRace.StartTime}";
             pnlRunThroughFinish.Visible = true;
             pnlTables.Visible = true;
@@ -87,6 +90,16 @@ namespace FinishLine
         private void btnFinish_Click(object sender, EventArgs e)
         {
             btnFinish.Enabled = false;
+        }
+
+        private void btnAcceptRunnerNr_Click(object sender, EventArgs e)
+        {
+            int runnerRegNr = (int)numRunnerRegNr.Value;
+            DateTime finishLineTime = DateTime.Now;
+            RaceLogic.AddLapTime(runnerRegNr, finishLineTime);
+            var lastLap = RaceLogic._runnerTimes.Last();
+            dtGrdRaceRun.Rows.Add(lastLap.Key, lastLap.Value.LapNr, lastLap.Value.FinishLineTime);
+            dtGrdRaceRun.Refresh();
         }
     }
 }

@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace FinishLine.Core
 {
-    public class Race
+    public class RaceProperties
     {
-        public int RoundLength { get; set; }
-        public int RoundCount { get; set; }
+        public int LapLength { get; set; }
+        public int LapCount { get; set; }
         public int NumOfWinners { get; set; }
         public DateTime StartTime { get; set; }
 
-        public Race()
+        public RaceProperties()
         {
         }
 
-        public Race(int roundLength, int roundCount, int numOfWinners)
+        public RaceProperties(int lapLength, int lapCount, int numOfWinners)
         {
-            RoundLength = roundLength;
-            RoundCount = roundCount;
+            LapLength = lapLength;
+            LapCount = lapCount;
             NumOfWinners = numOfWinners;
         }
 

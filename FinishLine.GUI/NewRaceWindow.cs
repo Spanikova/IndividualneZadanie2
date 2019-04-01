@@ -13,8 +13,8 @@ namespace FinishLine
 {
     public partial class NewRaceWindow : Form
     {
-        public int RoundLength { get; set; }
-        public int RoundCount { get; set; }
+        public int LapLength { get; set; }
+        public int LapCount { get; set; }
         public int NumOfWinners { get; set; }
 
         public NewRaceWindow()
@@ -29,10 +29,10 @@ namespace FinishLine
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            RoundLength = (int) numRoundLength.Value;
-            RoundCount = (int)numRoundCount.Value;
+            LapLength = (int) numLapLength.Value;
+            LapCount = (int)numLapCount.Value;
             NumOfWinners = (int)numWinnersCount.Value;
-            MainWindow._currentRace = new Core.Race(RoundLength, RoundCount, NumOfWinners);
+            MainWindow._currentRace = new Core.RaceProperties(LapLength, LapCount, NumOfWinners);
             MainWindow.RaceIsSelected = true;
             DialogResult =  DialogResult.OK;
         }

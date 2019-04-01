@@ -20,11 +20,12 @@ namespace FinishLine
 
         private void RunnersListWindow_Load(object sender, EventArgs e)
         {
+            
             foreach (var runner in RaceLogic._runners)
             {
-                dataRunnersList.Rows.Add(RaceLogic.RegNrToString(runner.Key), runner.Value.RunnerName, runner.Value.Age, runner.Value.Sex, runner.Value.Country);
-                dataRunnersList.Sort(ColRegNr, ListSortDirection.Ascending);
+                dataRunnersList.Rows.Add(RaceLogic.RegNrToString(runner.Key), runner.Value.RunnerName, runner.Value.Age, runner.Value.Sex, runner.Value.Country);                
             }
+            dataRunnersList.Sort(ColRegNr, ListSortDirection.Ascending);
         }
     }
 }

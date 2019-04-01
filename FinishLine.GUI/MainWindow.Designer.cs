@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.ToolStripMenuItem menuNewRace;
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenu = new System.Windows.Forms.MenuStrip();
+            this.menuRace = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRunner = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,20 +41,24 @@
             this.btnFinish = new System.Windows.Forms.Button();
             this.pnlButtonsStartStop = new System.Windows.Forms.Panel();
             this.pnlRaceProperties = new System.Windows.Forms.Panel();
+            this.lblStartTime = new System.Windows.Forms.Label();
             this.lblWinnersCount = new System.Windows.Forms.Label();
             this.lblRndCount = new System.Windows.Forms.Label();
             this.lblRndLength = new System.Windows.Forms.Label();
-            this.lblStartTime = new System.Windows.Forms.Label();
             this.pnlRunThroughFinish = new System.Windows.Forms.Panel();
-            this.lblInfoWriteNr = new System.Windows.Forms.Label();
-            this.numRunnerRegNr = new System.Windows.Forms.NumericUpDown();
             this.btnAcceptRunnerNr = new System.Windows.Forms.Button();
+            this.numRunnerRegNr = new System.Windows.Forms.NumericUpDown();
+            this.lblInfoWriteNr = new System.Windows.Forms.Label();
             this.pnlRacePanel = new System.Windows.Forms.Panel();
             this.dtGrdRaceRun = new System.Windows.Forms.DataGridView();
             this.dtGrdRaceResults = new System.Windows.Forms.DataGridView();
             this.pnlTables = new System.Windows.Forms.Panel();
+            this.lblRaceLength = new System.Windows.Forms.Label();
+            this.ColRegNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNrOfLaps = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.mainMenu.SuspendLayout();
             this.pnlButtonsStartStop.SuspendLayout();
             this.pnlRaceProperties.SuspendLayout();
             this.pnlRunThroughFinish.SuspendLayout();
@@ -72,26 +76,25 @@
             menuNewRace.Text = "Nový pretek";
             menuNewRace.Click += new System.EventHandler(this.menuNewRace_Click);
             // 
-            // menuStrip1
+            // mainMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuFile,
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuRace,
             this.menuRunner});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1021, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(1021, 24);
+            this.mainMenu.TabIndex = 0;
             // 
-            // menuFile
+            // menuRace
             // 
-            this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuRace.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             menuNewRace,
             this.menuOpen,
             this.menuSave});
-            this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(50, 20);
-            this.menuFile.Text = "Súbor";
+            this.menuRace.Name = "menuRace";
+            this.menuRace.Size = new System.Drawing.Size(52, 20);
+            this.menuRace.Text = "Pretek";
             // 
             // menuOpen
             // 
@@ -170,20 +173,30 @@
             // 
             // pnlRaceProperties
             // 
+            this.pnlRaceProperties.Controls.Add(this.lblRaceLength);
             this.pnlRaceProperties.Controls.Add(this.lblStartTime);
             this.pnlRaceProperties.Controls.Add(this.lblWinnersCount);
             this.pnlRaceProperties.Controls.Add(this.lblRndCount);
             this.pnlRaceProperties.Controls.Add(this.lblRndLength);
-            this.pnlRaceProperties.Location = new System.Drawing.Point(383, 8);
+            this.pnlRaceProperties.Location = new System.Drawing.Point(267, 8);
             this.pnlRaceProperties.Name = "pnlRaceProperties";
-            this.pnlRaceProperties.Size = new System.Drawing.Size(638, 44);
+            this.pnlRaceProperties.Size = new System.Drawing.Size(751, 44);
             this.pnlRaceProperties.TabIndex = 4;
             this.pnlRaceProperties.Visible = false;
+            // 
+            // lblStartTime
+            // 
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Location = new System.Drawing.Point(575, 15);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(60, 13);
+            this.lblStartTime.TabIndex = 3;
+            this.lblStartTime.Text = "Čas štartu: ";
             // 
             // lblWinnersCount
             // 
             this.lblWinnersCount.AutoSize = true;
-            this.lblWinnersCount.Location = new System.Drawing.Point(262, 15);
+            this.lblWinnersCount.Location = new System.Drawing.Point(370, 15);
             this.lblWinnersCount.Name = "lblWinnersCount";
             this.lblWinnersCount.Size = new System.Drawing.Size(156, 13);
             this.lblWinnersCount.TabIndex = 2;
@@ -192,7 +205,7 @@
             // lblRndCount
             // 
             this.lblRndCount.AutoSize = true;
-            this.lblRndCount.Location = new System.Drawing.Point(157, 15);
+            this.lblRndCount.Location = new System.Drawing.Point(120, 15);
             this.lblRndCount.Name = "lblRndCount";
             this.lblRndCount.Size = new System.Drawing.Size(55, 13);
             this.lblRndCount.TabIndex = 1;
@@ -208,15 +221,6 @@
             this.lblRndLength.TabIndex = 0;
             this.lblRndLength.Text = "Dĺžka kola:";
             // 
-            // lblStartTime
-            // 
-            this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Location = new System.Drawing.Point(468, 15);
-            this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(60, 13);
-            this.lblStartTime.TabIndex = 3;
-            this.lblStartTime.Text = "Čas štartu: ";
-            // 
             // pnlRunThroughFinish
             // 
             this.pnlRunThroughFinish.Controls.Add(this.btnAcceptRunnerNr);
@@ -229,22 +233,6 @@
             this.pnlRunThroughFinish.TabIndex = 5;
             this.pnlRunThroughFinish.Visible = false;
             // 
-            // lblInfoWriteNr
-            // 
-            this.lblInfoWriteNr.AutoSize = true;
-            this.lblInfoWriteNr.Location = new System.Drawing.Point(3, 14);
-            this.lblInfoWriteNr.Name = "lblInfoWriteNr";
-            this.lblInfoWriteNr.Size = new System.Drawing.Size(225, 13);
-            this.lblInfoWriteNr.TabIndex = 0;
-            this.lblInfoWriteNr.Text = "Zadajte číslo pretekára, ktorý prebehol cieľom";
-            // 
-            // numRunnerRegNr
-            // 
-            this.numRunnerRegNr.Location = new System.Drawing.Point(30, 30);
-            this.numRunnerRegNr.Name = "numRunnerRegNr";
-            this.numRunnerRegNr.Size = new System.Drawing.Size(64, 20);
-            this.numRunnerRegNr.TabIndex = 1;
-            // 
             // btnAcceptRunnerNr
             // 
             this.btnAcceptRunnerNr.Location = new System.Drawing.Point(131, 30);
@@ -253,6 +241,23 @@
             this.btnAcceptRunnerNr.TabIndex = 2;
             this.btnAcceptRunnerNr.Text = "Potvrdiť";
             this.btnAcceptRunnerNr.UseVisualStyleBackColor = true;
+            this.btnAcceptRunnerNr.Click += new System.EventHandler(this.btnAcceptRunnerNr_Click);
+            // 
+            // numRunnerRegNr
+            // 
+            this.numRunnerRegNr.Location = new System.Drawing.Point(30, 30);
+            this.numRunnerRegNr.Name = "numRunnerRegNr";
+            this.numRunnerRegNr.Size = new System.Drawing.Size(64, 20);
+            this.numRunnerRegNr.TabIndex = 1;
+            // 
+            // lblInfoWriteNr
+            // 
+            this.lblInfoWriteNr.AutoSize = true;
+            this.lblInfoWriteNr.Location = new System.Drawing.Point(3, 14);
+            this.lblInfoWriteNr.Name = "lblInfoWriteNr";
+            this.lblInfoWriteNr.Size = new System.Drawing.Size(225, 13);
+            this.lblInfoWriteNr.TabIndex = 0;
+            this.lblInfoWriteNr.Text = "Zadajte číslo pretekára, ktorý prebehol cieľom";
             // 
             // pnlRacePanel
             // 
@@ -269,11 +274,16 @@
             this.dtGrdRaceRun.AllowUserToAddRows = false;
             this.dtGrdRaceRun.AllowUserToDeleteRows = false;
             this.dtGrdRaceRun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrdRaceRun.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColRegNr,
+            this.ColNrOfLaps,
+            this.ColTime});
             this.dtGrdRaceRun.Dock = System.Windows.Forms.DockStyle.Left;
             this.dtGrdRaceRun.Location = new System.Drawing.Point(0, 0);
             this.dtGrdRaceRun.Name = "dtGrdRaceRun";
             this.dtGrdRaceRun.ReadOnly = true;
-            this.dtGrdRaceRun.Size = new System.Drawing.Size(574, 456);
+            this.dtGrdRaceRun.RowHeadersVisible = false;
+            this.dtGrdRaceRun.Size = new System.Drawing.Size(303, 456);
             this.dtGrdRaceRun.TabIndex = 7;
             // 
             // dtGrdRaceResults
@@ -296,6 +306,33 @@
             this.pnlTables.TabIndex = 3;
             this.pnlTables.Visible = false;
             // 
+            // lblRaceLength
+            // 
+            this.lblRaceLength.AutoSize = true;
+            this.lblRaceLength.Location = new System.Drawing.Point(224, 15);
+            this.lblRaceLength.Name = "lblRaceLength";
+            this.lblRaceLength.Size = new System.Drawing.Size(83, 13);
+            this.lblRaceLength.TabIndex = 4;
+            this.lblRaceLength.Text = " Dĺžka preteku: ";
+            // 
+            // ColRegNr
+            // 
+            this.ColRegNr.HeaderText = "Štart. číslo";
+            this.ColRegNr.Name = "ColRegNr";
+            this.ColRegNr.ReadOnly = true;
+            // 
+            // ColNrOfLaps
+            // 
+            this.ColNrOfLaps.HeaderText = "Počet kôl";
+            this.ColNrOfLaps.Name = "ColNrOfLaps";
+            this.ColNrOfLaps.ReadOnly = true;
+            // 
+            // ColTime
+            // 
+            this.ColTime.HeaderText = "Celkový čas";
+            this.ColTime.Name = "ColTime";
+            this.ColTime.ReadOnly = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,14 +341,14 @@
             this.Controls.Add(this.pnlRunThroughFinish);
             this.Controls.Add(this.pnlTables);
             this.Controls.Add(this.pnlRacePanel);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mainMenu);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preteky";
             this.Activated += new System.EventHandler(this.MainWindow_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
             this.pnlButtonsStartStop.ResumeLayout(false);
             this.pnlRaceProperties.ResumeLayout(false);
             this.pnlRaceProperties.PerformLayout();
@@ -329,8 +366,8 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuFile;
+        private System.Windows.Forms.MenuStrip mainMenu;
+        private System.Windows.Forms.ToolStripMenuItem menuRace;
         private System.Windows.Forms.ToolStripMenuItem menuRunner;
         private System.Windows.Forms.ToolStripMenuItem menuOpen;
         private System.Windows.Forms.ToolStripMenuItem menuSave;
@@ -353,6 +390,10 @@
         private System.Windows.Forms.DataGridView dtGrdRaceRun;
         private System.Windows.Forms.DataGridView dtGrdRaceResults;
         private System.Windows.Forms.Panel pnlTables;
+        private System.Windows.Forms.Label lblRaceLength;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColRegNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNrOfLaps;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTime;
     }
 }
 
