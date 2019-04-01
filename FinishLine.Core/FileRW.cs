@@ -110,8 +110,7 @@ namespace FinishLine.Core
                 race.LapCount = int.Parse(zaznam[1]);
                 race.NumOfWinners = int.Parse(zaznam[2]);
                 race.StartTime = DateTime.Parse(zaznam[3]);
-            }
-            
+            }            
         }
 
     }

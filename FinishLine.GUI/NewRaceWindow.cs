@@ -33,7 +33,7 @@ namespace FinishLine
             LapLength = (int) numLapLength.Value;
             LapCount = (int)numLapCount.Value;
             NumOfWinners = (int)numWinnersCount.Value;
-            RaceLogic._currentRace = new Core.RaceSettings(LapLength, LapCount, NumOfWinners);
+            RaceLogic._currentRace = new RaceSettings(LapLength, LapCount, NumOfWinners);
             MainWindow.RaceIsSelected = true;
             DialogResult =  DialogResult.OK;
         }

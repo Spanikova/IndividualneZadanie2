@@ -15,7 +15,8 @@ namespace FinishLine
     {
         
         public static bool RaceIsSelected = false;
-
+        public static bool RaceEnded = false;
+        public static bool RaceStarted = false;
 
         public MainWindow()
         {
@@ -55,18 +56,19 @@ namespace FinishLine
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            btnStart.Enabled = false;
-            btnFinish.Enabled = true;
-            RaceLogic._currentRace.StartTime = DateTime.Now;
-            RaceLogic.StartTime = DateTime.Now;
-            pnlRunThroughFinish.Visible = true;
-            pnlTables.Visible = true;
-
+            RaceStarted = true;
+            LoadMainWindow();
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
             EndRace();
+        }
+
+        private void EndRace()
+        {
+            RaceEnded = true;
+            LoadMainWindow();
         }
 
         private void btnAcceptRunnerNr_Click(object sender, EventArgs e)
@@ -93,13 +95,6 @@ namespace FinishLine
             }            
         }
 
-        private void EndRace()
-        {
-            btnFinish.Enabled = false;
-            pnlEndRace.Visible = true;
-            pnlRunThroughFinish.Visible = false;
-            menuSaveWinners.Visible = true;
-        }
 
         private void menuSaveList_Click(object sender, EventArgs e)
         {
@@ -122,24 +117,9 @@ namespace FinishLine
             {
                 FileRW.ReadRunnersListFromFile(openFile.FileName);
             }
-            
+            LoadMainWindow();
         }
 
-        private void menuRunner_Click(object sender, EventArgs e)
-        {
-            if (RaceLogic._runners.Count == 0)
-            {
-                menuRunnersList.Enabled = false;
-                menuChangeDelete.Enabled = false;
-                menuSaveList.Enabled = false;
-            }
-            else
-            {
-                menuRunnersList.Enabled = true;
-                menuChangeDelete.Enabled = true;
-                menuSaveList.Enabled = true;
-            }
-        }
 
         private void menuSaveWinners_Click(object sender, EventArgs e)
         {
@@ -178,21 +158,6 @@ namespace FinishLine
             }
         }
 
-        private void LoadMainWindow()
-        {
-            menuSaveWinners.Visible = false;
-            if (RaceIsSelected)
-            {
-                btnStart.Visible = true;
-                btnFinish.Visible = true;
-                pnlRaceProperties.Visible = true;
-                lblRndLength.Text = $"Dĺžka kola: {RaceLogic._currentRace.LapLength} km";
-                lblRndCount.Text = $"Počet kôl: {RaceLogic._currentRace.LapCount}";
-                lblRaceLength.Text = $"Dĺžka pretekov: {RaceLogic._currentRace.LapLength * RaceLogic._currentRace.LapCount} km";
-                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {RaceLogic._currentRace.NumOfWinners}";
-            }
-        }
-
         private void menuSaveRace_Click(object sender, EventArgs e)
         {
             string path = FileRW.ProjectPath + FileRW.SAVE_RACE_PATH;
@@ -207,7 +172,67 @@ namespace FinishLine
             FileRW.ReadRaceSettingsFromFile($"{path}/race_settings.txt");
             FileRW.ReadRunnersListFromFile($"{path}/runners_list.txt");
             FileRW.ReadWinnersFromFile($"{path}/winners_list.txt");
+            if(RaceLogic._currentRace.LapCount > 0)
+            {
+                RaceIsSelected = true;
+            }
+            if(RaceLogic._winners.Count > 0)
+            {
+                foreach (var winner in RaceLogic._winners)
+                {
+                    dtGrdRaceResults.Rows.Add(winner.Value.Place, winner.Key, winner.Value.RunnerName, winner.Value.TotalTime, winner.Value.Country);
+                }                
+                EndRace();
+            }
             LoadMainWindow();
         }
+
+        private void LoadMainWindow()
+        {
+            menuSaveWinners.Visible = false;
+            if (RaceIsSelected)
+            {
+                btnStart.Visible = true;
+                btnFinish.Visible = true;
+                pnlRaceProperties.Visible = true;
+                lblRndLength.Text = $"Dĺžka kola: {RaceLogic._currentRace.LapLength} km";
+                lblRndCount.Text = $"Počet kôl: {RaceLogic._currentRace.LapCount}";
+                lblRaceLength.Text = $"Dĺžka pretekov: {RaceLogic._currentRace.LapLength * RaceLogic._currentRace.LapCount} km";
+                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {RaceLogic._currentRace.NumOfWinners}";
+            }
+            if (RaceEnded)
+            {
+                btnFinish.Enabled = false;
+                pnlEndRace.Visible = true;
+                pnlRunThroughFinish.Visible = false;
+                menuSaveWinners.Visible = true;
+                pnlRacePanel.Visible = true;
+                pnlTables.Visible = true;
+                btnStart.Enabled = false;
+            }
+            if (RaceStarted)
+            {
+                btnStart.Enabled = false;
+                btnFinish.Enabled = true;
+                RaceLogic._currentRace.StartTime = DateTime.Now;
+                RaceLogic.StartTime = DateTime.Now;
+                pnlRunThroughFinish.Visible = true;
+                pnlTables.Visible = true;
+            }
+            if (RaceLogic._runners.Count == 0)
+            {
+                menuRunnersList.Enabled = false;
+                menuChangeDelete.Enabled = false;
+                menuSaveList.Enabled = false;
+            }
+            else
+            {
+                menuRunnersList.Enabled = true;
+                menuChangeDelete.Enabled = true;
+                menuSaveList.Enabled = true;
+            }
+        }
+
+       
     }
 }
