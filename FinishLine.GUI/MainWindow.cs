@@ -13,11 +13,22 @@ namespace FinishLine
 {
     public partial class MainWindow : Form
     {
-        
+        /// <summary>
+        /// Property for check if race is set
+        /// </summary>
         public static bool RaceIsSelected = false;
+        /// <summary>
+        /// Property for check if race ended
+        /// </summary>
         public static bool RaceEnded = false;
+        /// <summary>
+        /// Property for check if race started
+        /// </summary>
         public static bool RaceStarted = false;
 
+        /// <summary>
+        /// Constructor of the form with initialization
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -233,6 +244,9 @@ namespace FinishLine
             }
         }
 
-       
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

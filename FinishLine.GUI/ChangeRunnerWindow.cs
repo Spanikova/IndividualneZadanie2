@@ -12,14 +12,31 @@ using System.Windows.Forms;
 namespace FinishLine
 {
     public partial class ChangeRunnerWindow : Form
-    {
+    {   
+        /// <summary>
+        /// Property for changing the name of the runner
+        /// </summary>
         public string RunnerName { get; set; }
+        /// <summary>
+        /// Property for changing the country of the runner
+        /// </summary>
         public string CountryName { get; set; }
+        /// <summary>
+        /// Property for changing the age of the runner
+        /// </summary>
         public int Age { get; set; }
+        /// <summary>
+        /// Property for changing the sex of the runner
+        /// </summary>
         public string Sex { get; set; }
+        /// <summary>
+        /// Property for changing the start number of the runner
+        /// </summary>
         public int RegNumber { get; set; }
 
-
+        /// <summary>
+        /// Constructor of form with initialization
+        /// </summary>
         public ChangeRunnerWindow()
         {
             InitializeComponent();

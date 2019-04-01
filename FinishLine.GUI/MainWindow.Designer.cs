@@ -525,6 +525,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preteky";
             this.Activated += new System.EventHandler(this.MainWindow_Activated);
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.pnlButtonsStartStop.ResumeLayout(false);

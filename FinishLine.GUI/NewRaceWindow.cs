@@ -14,10 +14,22 @@ namespace FinishLine
 {
     public partial class NewRaceWindow : Form
     {
+        /// <summary>
+        /// Property for changing the length of lap
+        /// </summary>
         public int LapLength { get; set; }
+        /// <summary>
+        /// Property for changing the number of laps
+        /// </summary>
         public int LapCount { get; set; }
+        /// <summary>
+        /// Property for changing the number of winners to end the race
+        /// </summary>
         public int NumOfWinners { get; set; }
 
+        /// <summary>
+        /// Constructor of form with initialization
+        /// </summary
         public NewRaceWindow()
         {
             InitializeComponent();

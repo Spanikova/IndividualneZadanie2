@@ -13,6 +13,9 @@ namespace FinishLine
 {
     public partial class RunnersListWindow : Form
     {
+        /// <summary>
+        /// Constructor of form with initialization
+        /// </summary>
         public RunnersListWindow()
         {
             InitializeComponent();

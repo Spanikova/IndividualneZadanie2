@@ -14,16 +14,34 @@ namespace FinishLine.Core
         private static string _slovakShortName = "SlovakShortName";
         private static string _englishShortName = "EnglishShortName";
         private static string _officialShortName = "OfficialShortName";
+        /// <summary>
+        /// Path to the solution
+        /// </summary>
         public static string ProjectPath { get => Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..")); }
-        public const string DATA_PATH = @"\Data\countries.csv";
+        /// <summary>
+        /// Path to the countries file
+        /// </summary>
+        public const string COUNTRIES_DATA_PATH = @"\Data\countries.csv";
+        /// <summary>
+        /// Path to the saves directory
+        /// </summary>
         public const string SAVE_PATH = @"\Saves\";
+        /// <summary>
+        /// Path to the directory for saving race
+        /// </summary>
         public const string SAVE_RACE_PATH = @"\Saves\Last_race";
+        /// <summary>
+        /// List of available countries
+        /// </summary>
         public static List<Country> _countries = new List<Country>(250);
 
+        /// <summary>
+        /// Reads data from .csv file
+        /// </summary>
         public static void ReadCsvFile()
         {
 
-            using (var streamReader = new StreamReader(ProjectPath + DATA_PATH))
+            using (var streamReader = new StreamReader(ProjectPath + COUNTRIES_DATA_PATH))
             using (var csvReader = new CsvReader(streamReader))
             {
                 csvReader.ValueSeparator = ';';
@@ -38,6 +56,10 @@ namespace FinishLine.Core
             }
         }
 
+        /// <summary>
+        /// Writes list of runners to txt file
+        /// </summary>
+        /// <param name="fileName"></param>
         public static void WriteRunnersListToFile(string fileName)
         {
             StringBuilder sb = new StringBuilder();
@@ -48,6 +70,10 @@ namespace FinishLine.Core
             File.WriteAllText(fileName, sb.ToString());
         }
 
+        /// <summary>
+        /// Reads list of runners from txt file
+        /// </summary>
+        /// <param name="fileName"></param>
         public static void ReadRunnersListFromFile(string fileName)
         {
             RaceLogic._runners.Clear();
@@ -65,6 +91,10 @@ namespace FinishLine.Core
             }
         }
 
+        /// <summary>
+        /// Writes list of winners to txt file
+        /// </summary>
+        /// <param name="fileName"></param>
         public static void WriteWinnersToFile(string fileName)
         {
             StringBuilder sb = new StringBuilder();
@@ -75,6 +105,10 @@ namespace FinishLine.Core
             File.WriteAllText(fileName, sb.ToString());
         }
 
+        /// <summary>
+        /// Reads list of winners txt file
+        /// </summary>
+        /// <param name="fileName"></param>
         public static void ReadWinnersFromFile(string fileName)
         {
             RaceLogic._winners.Clear();
@@ -92,6 +126,10 @@ namespace FinishLine.Core
             }
         }
 
+        /// <summary>
+        /// Writes race settings to txt file
+        /// </summary>
+        /// <param name="fileName"></param>
         public static void WriteRaceSettingsToFile(string fileName)
         {
             RaceSettings race = RaceLogic._currentRace;
@@ -99,6 +137,10 @@ namespace FinishLine.Core
             File.WriteAllText(fileName, raceSettings);
         }
 
+        /// <summary>
+        /// Reads race settings from txt file
+        /// </summary>
+        /// <param name="fileName"></param>
         public static void ReadRaceSettingsFromFile(string fileName)
         {
             RaceSettings race = RaceLogic._currentRace;
