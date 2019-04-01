@@ -13,7 +13,7 @@ namespace FinishLine
 {
     public partial class MainWindow : Form
     {
-        public static Race NewRace = new Race();
+        public static Race _newRace = new Race();
         public static bool RaceIsSelected = false;
 
         public MainWindow()
@@ -65,12 +65,23 @@ namespace FinishLine
             if (RaceIsSelected)
             {
                 btnStart.Visible = true;
+                btnFinish.Visible = true;
+                pnlRaceProperties.Visible = true;
+                lblRndLength.Text = $"Dĺžka kola: {_newRace.RoundLength} km";
+                lblRndCount.Text = $"Počet kôl: {_newRace.RoundCount}";
+                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {_newRace.NumOfWinners}";
             }
         }
 
-        private void dataGridViewGrouper1_DisplayGroup(object sender, Subro.Controls.GroupDisplayEventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
-            
+            btnStart.Enabled = false;
+            btnFinish.Enabled = true;
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            btnFinish.Enabled = false;
         }
     }
 }

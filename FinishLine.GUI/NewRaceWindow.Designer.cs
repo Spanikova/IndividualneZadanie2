@@ -51,20 +51,15 @@
             this.lblRoundLength.AutoSize = true;
             this.lblRoundLength.Location = new System.Drawing.Point(12, 13);
             this.lblRoundLength.Name = "lblRoundLength";
-            this.lblRoundLength.Size = new System.Drawing.Size(117, 13);
+            this.lblRoundLength.Size = new System.Drawing.Size(93, 13);
             this.lblRoundLength.TabIndex = 0;
-            this.lblRoundLength.Text = "Dĺžka kola  (v metroch)";
+            this.lblRoundLength.Text = "Dĺžka kola  (v km)";
             // 
             // numRoundLength
             // 
             this.numRoundLength.Location = new System.Drawing.Point(130, 11);
-            this.numRoundLength.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
             this.numRoundLength.Minimum = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -72,7 +67,7 @@
             this.numRoundLength.Size = new System.Drawing.Size(60, 20);
             this.numRoundLength.TabIndex = 1;
             this.numRoundLength.Value = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -124,7 +119,7 @@
             // 
             this.numWinnersCount.Location = new System.Drawing.Point(130, 101);
             this.numWinnersCount.Minimum = new decimal(new int[] {
-            1,
+            3,
             0,
             0,
             0});
@@ -132,7 +127,7 @@
             this.numWinnersCount.Size = new System.Drawing.Size(60, 20);
             this.numWinnersCount.TabIndex = 6;
             this.numWinnersCount.Value = new decimal(new int[] {
-            1,
+            3,
             0,
             0,
             0});
@@ -161,9 +156,9 @@
             // 
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnOk);
-            this.panel1.Location = new System.Drawing.Point(13, 163);
+            this.panel1.Location = new System.Drawing.Point(20, 163);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 44);
+            this.panel1.Size = new System.Drawing.Size(199, 44);
             this.panel1.TabIndex = 9;
             // 
             // panel2
