@@ -21,5 +21,9 @@ namespace FinishLine.Core
             TotalTime = totalTime;
             Country = country;
         }
+
+        public Winner()
+        {
+        }
     }
 }

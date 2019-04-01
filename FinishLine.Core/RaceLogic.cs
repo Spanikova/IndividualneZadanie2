@@ -11,7 +11,7 @@ namespace FinishLine.Core
 {
     public static class RaceLogic
     {
-        public static RaceProperties _currentRace = new RaceProperties();
+        public static RaceSettings _currentRace = new RaceSettings();
         public static Dictionary<int, Runner> _runners = new Dictionary<int, Runner>();
         public static Dictionary<int, LapStatistics> _runnerTimes = new Dictionary<int, LapStatistics>();
         public static Dictionary<int, Winner> _winners = new Dictionary<int, Winner>();

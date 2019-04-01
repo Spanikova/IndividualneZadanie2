@@ -31,8 +31,8 @@
             System.Windows.Forms.ToolStripMenuItem menuNewRace;
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.menuRace = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLoadSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSaveSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRunner = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.menuChangeDelete = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +86,7 @@
             // menuNewRace
             // 
             menuNewRace.Name = "menuNewRace";
-            menuNewRace.Size = new System.Drawing.Size(144, 22);
+            menuNewRace.Size = new System.Drawing.Size(180, 22);
             menuNewRace.Text = "Nové preteky";
             menuNewRace.Click += new System.EventHandler(this.menuNewRace_Click);
             // 
@@ -105,23 +105,25 @@
             // 
             this.menuRace.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             menuNewRace,
-            this.menuOpen,
-            this.menuSave});
+            this.menuSaveSettings,
+            this.menuLoadSettings});
             this.menuRace.Name = "menuRace";
             this.menuRace.Size = new System.Drawing.Size(58, 20);
             this.menuRace.Text = "Preteky";
             // 
-            // menuOpen
+            // menuLoadSettings
             // 
-            this.menuOpen.Name = "menuOpen";
-            this.menuOpen.Size = new System.Drawing.Size(144, 22);
-            this.menuOpen.Text = "Otvoriť";
+            this.menuLoadSettings.Name = "menuLoadSettings";
+            this.menuLoadSettings.Size = new System.Drawing.Size(180, 22);
+            this.menuLoadSettings.Text = "Nahrať nastavenia";
+            this.menuLoadSettings.Click += new System.EventHandler(this.menuLoadSettings_Click);
             // 
-            // menuSave
+            // menuSaveSettings
             // 
-            this.menuSave.Name = "menuSave";
-            this.menuSave.Size = new System.Drawing.Size(144, 22);
-            this.menuSave.Text = "Uložiť";
+            this.menuSaveSettings.Name = "menuSaveSettings";
+            this.menuSaveSettings.Size = new System.Drawing.Size(180, 22);
+            this.menuSaveSettings.Text = "Uložiť nastavenia";
+            this.menuSaveSettings.Click += new System.EventHandler(this.menuSaveSettings_Click);
             // 
             // menuRunner
             // 
@@ -523,8 +525,8 @@
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem menuRace;
         private System.Windows.Forms.ToolStripMenuItem menuRunner;
-        private System.Windows.Forms.ToolStripMenuItem menuOpen;
-        private System.Windows.Forms.ToolStripMenuItem menuSave;
+        private System.Windows.Forms.ToolStripMenuItem menuLoadSettings;
+        private System.Windows.Forms.ToolStripMenuItem menuSaveSettings;
         private System.Windows.Forms.ToolStripMenuItem menuRegister;
         private System.Windows.Forms.ToolStripMenuItem menuChangeDelete;
         private System.Windows.Forms.ToolStripMenuItem menuRunnersList;

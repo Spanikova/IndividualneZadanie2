@@ -166,6 +166,27 @@ namespace FinishLine
             }
         }
 
-        
+        private void menuSaveSettings_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.InitialDirectory = FileRW.ProjectPath + FileRW.SAVE_PATH;
+            saveFile.Filter = "Text files (*.txt)|*.txt";
+            saveFile.FileName = "preteky_nastavenie.txt";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                FileRW.WriteRaceSettingsToFile(saveFile.FileName);
+            }
+        }
+
+        private void menuLoadSettings_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.InitialDirectory = FileRW.ProjectPath + FileRW.SAVE_PATH;
+            openFile.Filter = "Text files (*.txt)|*.txt";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                FileRW.ReadRaceSettingsFromFile(openFile.FileName);
+            }
+        }
     }
 }

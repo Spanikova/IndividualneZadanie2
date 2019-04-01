@@ -91,5 +91,23 @@ namespace FinishLine.Core
             }
         }
 
+        public static void WriteRaceSettingsToFile(string fileName)
+        {
+            RaceSettings race = RaceLogic._currentRace;
+            string raceSettings = $"{race.LapLength}\t{race.LapCount}\t{race.NumOfWinners}\t{race.StartTime}";
+            File.WriteAllText(fileName, raceSettings);
+        }
+
+        public static void ReadRaceSettingsFromFile(string fileName)
+        {
+            RaceSettings race = RaceLogic._currentRace;
+            string[] zaznam = new string[4];
+            zaznam = File.ReadAllText(fileName).Split('\t');
+            race.LapLength = int.Parse(zaznam[0]);
+            race.LapCount = int.Parse(zaznam[1]);
+            race.NumOfWinners = int.Parse(zaznam[2]);
+            race.StartTime = DateTime.Parse(zaznam[3]);
+        }
+
     }
 }
