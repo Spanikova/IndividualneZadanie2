@@ -31,7 +31,6 @@ namespace FinishLine
             cmbCountry.DisplayMember = nameof(Country.SlovakShortName);
             cmbCountry.ValueMember = nameof(Country.SlovakShortName);
             cmbRegNumber.DataSource = RaceLogic._runners.Keys.ToList();
-            numAge.Value = 0;
         }
 
         private void cmbRegNumber_SelectedIndexChanged(object sender, EventArgs e)

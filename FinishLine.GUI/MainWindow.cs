@@ -13,6 +13,9 @@ namespace FinishLine
 {
     public partial class MainWindow : Form
     {
+        public static Race NewRace = new Race();
+        public static bool RaceIsSelected = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -52,16 +55,22 @@ namespace FinishLine
             if (RaceLogic._runners.Count == 0)
             {
                 menuRunnersList.Enabled = false;
+                menuChangeDelete.Enabled = false;
             }
             else
             {
                 menuRunnersList.Enabled = true;
+                menuChangeDelete.Enabled = true;
+            }
+            if (RaceIsSelected)
+            {
+                btnStart.Visible = true;
             }
         }
 
         private void dataGridViewGrouper1_DisplayGroup(object sender, Subro.Controls.GroupDisplayEventArgs e)
         {
-
+            
         }
     }
 }
