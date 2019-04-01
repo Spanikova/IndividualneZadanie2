@@ -9,6 +9,11 @@ namespace FinishLine.Core
 {
     public class Race
     {
+        public int RoundLength { get; set; }
+        public int RoundCount { get; set; }
+        public int NumOfWinners { get; set; }
+        public DateTime StartTime { get; set; }
+
         public Race()
         {
         }
@@ -20,9 +25,7 @@ namespace FinishLine.Core
             NumOfWinners = numOfWinners;
         }
 
-        public int RoundLength { get; set; }
-        public int RoundCount { get; set; }
-        public int NumOfWinners { get; set; }
+        
         
     }
 }

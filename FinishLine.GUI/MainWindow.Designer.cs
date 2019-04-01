@@ -41,9 +41,10 @@
             this.btnFinish = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlRaceProperties = new System.Windows.Forms.Panel();
-            this.lblRndLength = new System.Windows.Forms.Label();
-            this.lblRndCount = new System.Windows.Forms.Label();
             this.lblWinnersCount = new System.Windows.Forms.Label();
+            this.lblRndCount = new System.Windows.Forms.Label();
+            this.lblRndLength = new System.Windows.Forms.Label();
+            this.lblStartTime = new System.Windows.Forms.Label();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,7 +65,7 @@
             this.menuRunner});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(902, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1021, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -155,14 +156,33 @@
             // 
             // pnlRaceProperties
             // 
+            this.pnlRaceProperties.Controls.Add(this.lblStartTime);
             this.pnlRaceProperties.Controls.Add(this.lblWinnersCount);
             this.pnlRaceProperties.Controls.Add(this.lblRndCount);
             this.pnlRaceProperties.Controls.Add(this.lblRndLength);
             this.pnlRaceProperties.Location = new System.Drawing.Point(371, 29);
             this.pnlRaceProperties.Name = "pnlRaceProperties";
-            this.pnlRaceProperties.Size = new System.Drawing.Size(519, 44);
+            this.pnlRaceProperties.Size = new System.Drawing.Size(638, 44);
             this.pnlRaceProperties.TabIndex = 4;
             this.pnlRaceProperties.Visible = false;
+            // 
+            // lblWinnersCount
+            // 
+            this.lblWinnersCount.AutoSize = true;
+            this.lblWinnersCount.Location = new System.Drawing.Point(262, 15);
+            this.lblWinnersCount.Name = "lblWinnersCount";
+            this.lblWinnersCount.Size = new System.Drawing.Size(153, 13);
+            this.lblWinnersCount.TabIndex = 2;
+            this.lblWinnersCount.Text = "Počet vyhodnocovaných miest";
+            // 
+            // lblRndCount
+            // 
+            this.lblRndCount.AutoSize = true;
+            this.lblRndCount.Location = new System.Drawing.Point(157, 15);
+            this.lblRndCount.Name = "lblRndCount";
+            this.lblRndCount.Size = new System.Drawing.Size(52, 13);
+            this.lblRndCount.TabIndex = 1;
+            this.lblRndCount.Text = "Počet kôl";
             // 
             // lblRndLength
             // 
@@ -174,29 +194,20 @@
             this.lblRndLength.TabIndex = 0;
             this.lblRndLength.Text = "Dĺžka kola";
             // 
-            // lblRndCount
+            // lblStartTime
             // 
-            this.lblRndCount.AutoSize = true;
-            this.lblRndCount.Location = new System.Drawing.Point(157, 15);
-            this.lblRndCount.Name = "lblRndCount";
-            this.lblRndCount.Size = new System.Drawing.Size(52, 13);
-            this.lblRndCount.TabIndex = 1;
-            this.lblRndCount.Text = "Počet kôl";
-            // 
-            // lblWinnersCount
-            // 
-            this.lblWinnersCount.AutoSize = true;
-            this.lblWinnersCount.Location = new System.Drawing.Point(262, 15);
-            this.lblWinnersCount.Name = "lblWinnersCount";
-            this.lblWinnersCount.Size = new System.Drawing.Size(153, 13);
-            this.lblWinnersCount.TabIndex = 2;
-            this.lblWinnersCount.Text = "Počet vyhodnocovaných miest";
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Location = new System.Drawing.Point(468, 15);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(60, 13);
+            this.lblStartTime.TabIndex = 3;
+            this.lblStartTime.Text = "Čas štartu: ";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 519);
+            this.ClientSize = new System.Drawing.Size(1021, 519);
             this.Controls.Add(this.pnlRaceProperties);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -232,6 +243,7 @@
         private System.Windows.Forms.Label lblRndLength;
         private System.Windows.Forms.Label lblRndCount;
         private System.Windows.Forms.Label lblWinnersCount;
+        private System.Windows.Forms.Label lblStartTime;
     }
 }
 

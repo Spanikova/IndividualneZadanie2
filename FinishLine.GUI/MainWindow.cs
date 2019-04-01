@@ -13,7 +13,7 @@ namespace FinishLine
 {
     public partial class MainWindow : Form
     {
-        public static Race _newRace = new Race();
+        public static Race _currentRace = new Race();
         public static bool RaceIsSelected = false;
 
         public MainWindow()
@@ -67,9 +67,9 @@ namespace FinishLine
                 btnStart.Visible = true;
                 btnFinish.Visible = true;
                 pnlRaceProperties.Visible = true;
-                lblRndLength.Text = $"Dĺžka kola: {_newRace.RoundLength} km";
-                lblRndCount.Text = $"Počet kôl: {_newRace.RoundCount}";
-                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {_newRace.NumOfWinners}";
+                lblRndLength.Text = $"Dĺžka kola: {_currentRace.RoundLength} km";
+                lblRndCount.Text = $"Počet kôl: {_currentRace.RoundCount}";
+                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {_currentRace.NumOfWinners}";
             }
         }
 
@@ -77,6 +77,8 @@ namespace FinishLine
         {
             btnStart.Enabled = false;
             btnFinish.Enabled = true;
+            _currentRace.StartTime = DateTime.Now;
+            lblStartTime.Text = $"Čas štartu: {_currentRace.StartTime}";
         }
 
         private void btnFinish_Click(object sender, EventArgs e)

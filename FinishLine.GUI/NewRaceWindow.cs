@@ -32,7 +32,7 @@ namespace FinishLine
             RoundLength = (int) numRoundLength.Value;
             RoundCount = (int)numRoundCount.Value;
             NumOfWinners = (int)numWinnersCount.Value;
-            MainWindow._newRace = new Core.Race(RoundLength, RoundCount, NumOfWinners);
+            MainWindow._currentRace = new Core.Race(RoundLength, RoundCount, NumOfWinners);
             MainWindow.RaceIsSelected = true;
             DialogResult =  DialogResult.OK;
         }
