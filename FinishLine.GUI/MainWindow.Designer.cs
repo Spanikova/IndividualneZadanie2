@@ -178,7 +178,6 @@
             this.menuSaveWinners.Name = "menuSaveWinners";
             this.menuSaveWinners.Size = new System.Drawing.Size(134, 20);
             this.menuSaveWinners.Text = "Uložiť poradie víťazov";
-            this.menuSaveWinners.Visible = false;
             this.menuSaveWinners.Click += new System.EventHandler(this.menuSaveWinners_Click);
             // 
             // btnStart

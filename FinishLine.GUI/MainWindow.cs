@@ -22,10 +22,7 @@ namespace FinishLine
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void menuNewRace_Click(object sender, EventArgs e)
         {
@@ -53,17 +50,7 @@ namespace FinishLine
 
         private void MainWindow_Activated(object sender, EventArgs e)
         {
-            
-            if (RaceIsSelected)
-            {
-                btnStart.Visible = true;
-                btnFinish.Visible = true;
-                pnlRaceProperties.Visible = true;
-                lblRndLength.Text = $"Dĺžka kola: {RaceLogic._currentRace.LapLength} km";
-                lblRndCount.Text = $"Počet kôl: {RaceLogic._currentRace.LapCount}";
-                lblRaceLength.Text = $"Dĺžka pretekov: {RaceLogic._currentRace.LapLength*RaceLogic._currentRace.LapCount} km";
-                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {RaceLogic._currentRace.NumOfWinners}";
-            }
+            LoadMainWindow();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -186,6 +173,23 @@ namespace FinishLine
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 FileRW.ReadRaceSettingsFromFile(openFile.FileName);
+                RaceIsSelected = true;
+                LoadMainWindow();
+            }
+        }
+
+        private void LoadMainWindow()
+        {
+            menuSaveWinners.Visible = false;
+            if (RaceIsSelected)
+            {
+                btnStart.Visible = true;
+                btnFinish.Visible = true;
+                pnlRaceProperties.Visible = true;
+                lblRndLength.Text = $"Dĺžka kola: {RaceLogic._currentRace.LapLength} km";
+                lblRndCount.Text = $"Počet kôl: {RaceLogic._currentRace.LapCount}";
+                lblRaceLength.Text = $"Dĺžka pretekov: {RaceLogic._currentRace.LapLength * RaceLogic._currentRace.LapCount} km";
+                lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {RaceLogic._currentRace.NumOfWinners}";
             }
         }
     }
