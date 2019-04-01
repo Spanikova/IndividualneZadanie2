@@ -40,7 +40,7 @@ namespace FinishLine.Core
 
         public static string RegNrToString(int regNumber)
         {
-            string strRegNr = "";
+            string strRegNr = $"{regNumber}";
             if(regNumber < 10)
             {
                 strRegNr = $"00{regNumber}";
@@ -48,10 +48,6 @@ namespace FinishLine.Core
             else if (regNumber >= 10 && regNumber < 100)
             {
                 strRegNr = $"0{regNumber}";
-            }
-            else
-            {
-                strRegNr = regNumber.ToString();
             }
             return strRegNr;
         }

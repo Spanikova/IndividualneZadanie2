@@ -185,18 +185,18 @@
             this.lblWinnersCount.AutoSize = true;
             this.lblWinnersCount.Location = new System.Drawing.Point(262, 15);
             this.lblWinnersCount.Name = "lblWinnersCount";
-            this.lblWinnersCount.Size = new System.Drawing.Size(153, 13);
+            this.lblWinnersCount.Size = new System.Drawing.Size(156, 13);
             this.lblWinnersCount.TabIndex = 2;
-            this.lblWinnersCount.Text = "Počet vyhodnocovaných miest";
+            this.lblWinnersCount.Text = "Počet vyhodnocovaných miest:";
             // 
             // lblRndCount
             // 
             this.lblRndCount.AutoSize = true;
             this.lblRndCount.Location = new System.Drawing.Point(157, 15);
             this.lblRndCount.Name = "lblRndCount";
-            this.lblRndCount.Size = new System.Drawing.Size(52, 13);
+            this.lblRndCount.Size = new System.Drawing.Size(55, 13);
             this.lblRndCount.TabIndex = 1;
-            this.lblRndCount.Text = "Počet kôl";
+            this.lblRndCount.Text = "Počet kôl:";
             // 
             // lblRndLength
             // 
@@ -204,9 +204,9 @@
             this.lblRndLength.Location = new System.Drawing.Point(19, 15);
             this.lblRndLength.MinimumSize = new System.Drawing.Size(10, 0);
             this.lblRndLength.Name = "lblRndLength";
-            this.lblRndLength.Size = new System.Drawing.Size(58, 13);
+            this.lblRndLength.Size = new System.Drawing.Size(61, 13);
             this.lblRndLength.TabIndex = 0;
-            this.lblRndLength.Text = "Dĺžka kola";
+            this.lblRndLength.Text = "Dĺžka kola:";
             // 
             // lblStartTime
             // 
