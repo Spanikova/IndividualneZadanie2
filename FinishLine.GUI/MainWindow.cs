@@ -95,10 +95,10 @@ namespace FinishLine
         private void btnAcceptRunnerNr_Click(object sender, EventArgs e)
         {
             int runnerRegNr = (int)numRunnerRegNr.Value;
-            DateTime finishLineTime = DateTime.Now;
+            DateTime finishLineTime = DateTime.Now;            
             RaceLogic.AddLapTime(runnerRegNr, finishLineTime);
-            var lastLap = RaceLogic._runnerTimes.Last();
-            dtGrdRaceRun.Rows.Add(lastLap.Key, lastLap.Value.LapNr, lastLap.Value.FinishLineTime);
+            var lastLap = RaceLogic._runnerTimes[runnerRegNr];
+            dtGrdRaceRun.Rows.Add(runnerRegNr, lastLap.LapNr, lastLap.FinishLineTime);
             dtGrdRaceRun.Refresh();
         }
     }

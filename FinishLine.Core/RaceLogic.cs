@@ -69,10 +69,8 @@ namespace FinishLine.Core
             }
             else
             {
-                
                 _runnerTimes.Add(regNr, lastLap);
             }
-            
         }
     }
 }
