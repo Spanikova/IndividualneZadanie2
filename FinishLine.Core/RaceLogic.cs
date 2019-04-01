@@ -15,6 +15,7 @@ namespace FinishLine.Core
         public static Dictionary<int, Runner> _runners = new Dictionary<int, Runner>();
         public static Dictionary<int, LapStatistics> _runnerTimes = new Dictionary<int, LapStatistics>();
         public static Dictionary<int, Winner> _winners = new Dictionary<int, Winner>();
+        public static Dictionary<int, List<DateTime>> _lapTimes = new Dictionary<int, List<DateTime>>();
         public static DateTime StartTime { get; set; }
         public static int _place { get; set; } = 0;
 
@@ -67,15 +68,18 @@ namespace FinishLine.Core
             if (_runnerTimes.ContainsKey(regNr))
             {
                 LapStatistics runnerTime = _runnerTimes[regNr];
-                TimeSpan timeToCompare = _runnerTimes[regNr].TotalTime;
+                TimeSpan timeToCompare = _lapTimes[regNr].Last() - StartTime;
                 runnerTime.LapNr++;
                 runnerTime.TotalTime = lapTime;
                 runnerTime.LapTime = lapTime - timeToCompare;
+                _lapTimes[regNr].Add(finishLineTime);
             }
             else
             {
                 lastLap.LapTime = lastLap.TotalTime;
                 _runnerTimes.Add(regNr, lastLap);
+                _lapTimes.Add(regNr, new List<DateTime>());
+                _lapTimes[regNr].Add(finishLineTime);
             }
         }
 
