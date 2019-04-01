@@ -510,6 +510,7 @@
             this.menuLoadLastRace.Name = "menuLoadLastRace";
             this.menuLoadLastRace.Size = new System.Drawing.Size(204, 22);
             this.menuLoadLastRace.Text = "Nahrať posledné preteky";
+            this.menuLoadLastRace.Click += new System.EventHandler(this.menuLoadLastRace_Click);
             // 
             // MainWindow
             // 

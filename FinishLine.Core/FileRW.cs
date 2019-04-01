@@ -75,7 +75,7 @@ namespace FinishLine.Core
             File.WriteAllText(fileName, sb.ToString());
         }
 
-        private static void ReadWinnersFromFile(string fileName)
+        public static void ReadWinnersFromFile(string fileName)
         {
             RaceLogic._winners.Clear();
             List<string> lines = new List<string>(100);
@@ -104,10 +104,14 @@ namespace FinishLine.Core
             RaceSettings race = RaceLogic._currentRace;
             string[] zaznam = new string[4];
             zaznam = File.ReadAllText(fileName).Split('\t');
-            race.LapLength = int.Parse(zaznam[0]);
-            race.LapCount = int.Parse(zaznam[1]);
-            race.NumOfWinners = int.Parse(zaznam[2]);
-            race.StartTime = DateTime.Parse(zaznam[3]);
+            if (zaznam[0].Length > 0)
+            {
+                race.LapLength = int.Parse(zaznam[0]);
+                race.LapCount = int.Parse(zaznam[1]);
+                race.NumOfWinners = int.Parse(zaznam[2]);
+                race.StartTime = DateTime.Parse(zaznam[3]);
+            }
+            
         }
 
     }

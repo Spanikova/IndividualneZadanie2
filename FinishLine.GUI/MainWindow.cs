@@ -200,5 +200,14 @@ namespace FinishLine
             FileRW.WriteRunnersListToFile($"{path}/runners_list.txt");
             FileRW.WriteWinnersToFile($"{path}/winners_list.txt");
         }
+
+        private void menuLoadLastRace_Click(object sender, EventArgs e)
+        {
+            string path = FileRW.ProjectPath + FileRW.SAVE_RACE_PATH;
+            FileRW.ReadRaceSettingsFromFile($"{path}/race_settings.txt");
+            FileRW.ReadRunnersListFromFile($"{path}/runners_list.txt");
+            FileRW.ReadWinnersFromFile($"{path}/winners_list.txt");
+            LoadMainWindow();
+        }
     }
 }
