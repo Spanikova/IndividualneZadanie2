@@ -100,6 +100,13 @@ namespace FinishLine
             var lastLap = RaceLogic._runnerTimes[runnerRegNr];
             dtGrdRaceRun.Rows.Add(runnerRegNr, lastLap.LapNr, lastLap.LapTime, lastLap.TotalTime);
             dtGrdRaceRun.Sort(ColNrOfLaps, ListSortDirection.Descending);
+            if(lastLap.LapNr == _currentRace.LapCount)
+            {
+                Winner winner = RaceLogic.AddWinner(runnerRegNr);
+                int place = RaceLogic._place;
+                dtGrdRaceResults.Rows.Add(place, winner.RegNr, winner.RunnerName, winner.TotalTime, winner.Country);
+            }
+
             
         }
     }

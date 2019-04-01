@@ -58,6 +58,11 @@
             this.ColNrOfLaps = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLapTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColStartNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColRunnerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.pnlButtonsStartStop.SuspendLayout();
@@ -280,7 +285,6 @@
             this.ColNrOfLaps,
             this.ColLapTime,
             this.ColTotalTime});
-            this.dtGrdRaceRun.Dock = System.Windows.Forms.DockStyle.Left;
             this.dtGrdRaceRun.Location = new System.Drawing.Point(0, 0);
             this.dtGrdRaceRun.Name = "dtGrdRaceRun";
             this.dtGrdRaceRun.ReadOnly = true;
@@ -290,11 +294,21 @@
             // 
             // dtGrdRaceResults
             // 
+            this.dtGrdRaceResults.AllowUserToAddRows = false;
+            this.dtGrdRaceResults.AllowUserToDeleteRows = false;
+            this.dtGrdRaceResults.AllowUserToResizeColumns = false;
+            this.dtGrdRaceResults.AllowUserToResizeRows = false;
             this.dtGrdRaceResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrdRaceResults.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dtGrdRaceResults.Location = new System.Drawing.Point(589, 0);
+            this.dtGrdRaceResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColPlace,
+            this.ColStartNr,
+            this.ColRunnerName,
+            this.ColTime,
+            this.ColCountry});
+            this.dtGrdRaceResults.Location = new System.Drawing.Point(472, 0);
             this.dtGrdRaceResults.Name = "dtGrdRaceResults";
-            this.dtGrdRaceResults.Size = new System.Drawing.Size(432, 456);
+            this.dtGrdRaceResults.RowHeadersVisible = false;
+            this.dtGrdRaceResults.Size = new System.Drawing.Size(549, 456);
             this.dtGrdRaceResults.TabIndex = 8;
             // 
             // pnlTables
@@ -340,6 +354,41 @@
             this.ColTotalTime.HeaderText = "Celkový čas";
             this.ColTotalTime.Name = "ColTotalTime";
             this.ColTotalTime.ReadOnly = true;
+            // 
+            // ColPlace
+            // 
+            this.ColPlace.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColPlace.HeaderText = "Miesto";
+            this.ColPlace.Name = "ColPlace";
+            this.ColPlace.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColPlace.Width = 63;
+            // 
+            // ColStartNr
+            // 
+            this.ColStartNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColStartNr.HeaderText = "Štart. číslo";
+            this.ColStartNr.Name = "ColStartNr";
+            this.ColStartNr.Width = 83;
+            // 
+            // ColRunnerName
+            // 
+            this.ColRunnerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColRunnerName.HeaderText = "Meno";
+            this.ColRunnerName.Name = "ColRunnerName";
+            this.ColRunnerName.Width = 59;
+            // 
+            // ColTime
+            // 
+            this.ColTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColTime.HeaderText = "Čas";
+            this.ColTime.Name = "ColTime";
+            this.ColTime.Width = 50;
+            // 
+            // ColCountry
+            // 
+            this.ColCountry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColCountry.HeaderText = "Krajina";
+            this.ColCountry.Name = "ColCountry";
             // 
             // MainWindow
             // 
@@ -403,6 +452,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNrOfLaps;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLapTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTotalTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColStartNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColRunnerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCountry;
     }
 }
 

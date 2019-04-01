@@ -13,7 +13,9 @@ namespace FinishLine.Core
     {
         public static Dictionary<int, Runner> _runners = new Dictionary<int, Runner>();
         public static Dictionary<int, LapStatistics> _runnerTimes = new Dictionary<int, LapStatistics>();
+        public static Dictionary<int, Winner> _winners = new Dictionary<int, Winner>();
         public static DateTime StartTime { get; set; }
+        public static int _place { get; set; } = 0;
 
 
         public static int GetRegNumber()
@@ -76,6 +78,17 @@ namespace FinishLine.Core
             }
         }
 
+        public static Winner AddWinner(int regNr)
+        {
+            _place++;
+            Winner winner = new Winner();
+            winner.RegNr = regNr;
+            winner.RunnerName = _runners[regNr].RunnerName;
+            winner.Country = _runners[regNr].Country;
+            winner.TotalTime = _runnerTimes[regNr].TotalTime;
+            _winners.Add(_place, winner);
+            return winner;
+        }
         
     }
 }
