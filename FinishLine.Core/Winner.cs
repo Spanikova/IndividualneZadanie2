@@ -13,5 +13,13 @@ namespace FinishLine.Core
         public string RunnerName { get; set; }
         public TimeSpan TotalTime { get; set; }
         public string Country { get; set; }
+
+        public Winner(int place, string runnerName, TimeSpan totalTime, string country)
+        {
+            Place = place;
+            RunnerName = runnerName;
+            TotalTime = totalTime;
+            Country = country;
+        }
     }
 }

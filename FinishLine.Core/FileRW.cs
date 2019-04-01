@@ -37,14 +37,14 @@ namespace FinishLine.Core
             }
         }
 
-        public static void WriteRunnersListToFile(string path)
+        public static void WriteRunnersListToFile(string fileName)
         {
             StringBuilder sb = new StringBuilder();
             foreach (var runner in RaceLogic._runners)
             {
                 sb.AppendLine($"{runner.Key}\t{runner.Value.RunnerName}\t{runner.Value.Country}\t{runner.Value.Age}\t{runner.Value.Sex}");
             }
-            File.WriteAllText(path, sb.ToString());
+            File.WriteAllText(fileName, sb.ToString());
         }
 
         public static void ReadRunnersListFromFile(string fileName)
@@ -61,6 +61,33 @@ namespace FinishLine.Core
                     Runner runner = new Runner(zaznam[1], zaznam[2], int.Parse(zaznam[3]), zaznam[4]);
                     RaceLogic._runners.Add(int.Parse(zaznam[0]), runner);
                 }                
+            }
+        }
+
+        public static void WriteWinnersToFile(string fileName)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var winner in RaceLogic._winners)
+            {
+                sb.AppendLine($"{winner.Key}\t{winner.Value.Place}\t{winner.Value.RunnerName}\t{winner.Value.TotalTime}\t{winner.Value.Country}");
+            }
+            File.WriteAllText(fileName, sb.ToString());
+        }
+
+        private static void ReadWinnersFromFile(string fileName)
+        {
+            RaceLogic._winners.Clear();
+            List<string> lines = new List<string>(100);
+            lines = File.ReadAllLines(fileName).ToList();
+            string[] zaznam = new string[5];
+            foreach (string line in lines)
+            {
+                if (line.Length > 0)
+                {
+                    zaznam = line.Split('\t');
+                    Winner winner = new Winner(int.Parse(zaznam[1]), zaznam[2], TimeSpan.Parse(zaznam[3]), zaznam[4]);
+                    RaceLogic._winners.Add(int.Parse(zaznam[0]), winner);
+                }
             }
         }
 

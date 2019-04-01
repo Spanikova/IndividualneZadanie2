@@ -111,6 +111,7 @@ namespace FinishLine
             btnFinish.Enabled = false;
             pnlEndRace.Visible = true;
             pnlRunThroughFinish.Visible = false;
+            menuSaveWinners.Visible = true;
         }
 
         private void menuSaveList_Click(object sender, EventArgs e)
@@ -137,11 +138,6 @@ namespace FinishLine
             
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void menuRunner_Click(object sender, EventArgs e)
         {
             if (RaceLogic._runners.Count == 0)
@@ -157,5 +153,19 @@ namespace FinishLine
                 menuSaveList.Enabled = true;
             }
         }
+
+        private void menuSaveWinners_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.InitialDirectory = FileRW.ProjectPath + FileRW.SAVE_PATH;
+            saveFile.Filter = "Text files (*.txt)|*.txt";
+            saveFile.FileName = "zoznam_vitazov.txt";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                FileRW.WriteWinnersToFile(saveFile.FileName);
+            }
+        }
+
+        
     }
 }
