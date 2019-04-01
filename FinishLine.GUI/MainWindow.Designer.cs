@@ -68,6 +68,7 @@
             this.pnlEndRace = new System.Windows.Forms.Panel();
             this.lblEndRace = new System.Windows.Forms.Label();
             this.menuSaveList = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLoadRunnersList = new System.Windows.Forms.ToolStripMenuItem();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.pnlButtonsStartStop.SuspendLayout();
@@ -126,10 +127,12 @@
             this.menuRegister,
             this.menuChangeDelete,
             this.menuRunnersList,
-            this.menuSaveList});
+            this.menuSaveList,
+            this.menuLoadRunnersList});
             this.menuRunner.Name = "menuRunner";
             this.menuRunner.Size = new System.Drawing.Size(46, 20);
             this.menuRunner.Text = "Bežci";
+            this.menuRunner.Click += new System.EventHandler(this.menuRunner_Click);
             // 
             // menuRegister
             // 
@@ -464,6 +467,13 @@
             this.menuSaveList.Text = "Uložiť zoznam";
             this.menuSaveList.Click += new System.EventHandler(this.menuSaveList_Click);
             // 
+            // menuLoadRunnersList
+            // 
+            this.menuLoadRunnersList.Name = "menuLoadRunnersList";
+            this.menuLoadRunnersList.Size = new System.Drawing.Size(180, 22);
+            this.menuLoadRunnersList.Text = "Nahrať zoznam";
+            this.menuLoadRunnersList.Click += new System.EventHandler(this.menuLoadRunnersList_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,7 +488,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preteky";
             this.Activated += new System.EventHandler(this.MainWindow_Activated);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.pnlButtonsStartStop.ResumeLayout(false);
@@ -540,6 +550,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCountry;
         private System.Windows.Forms.ToolStripMenuItem menuSaveList;
+        private System.Windows.Forms.ToolStripMenuItem menuLoadRunnersList;
     }
 }
 

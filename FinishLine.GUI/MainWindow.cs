@@ -53,16 +53,7 @@ namespace FinishLine
 
         private void MainWindow_Activated(object sender, EventArgs e)
         {
-            if (RaceLogic._runners.Count == 0)
-            {
-                menuRunnersList.Enabled = false;
-                menuChangeDelete.Enabled = false;
-            }
-            else
-            {
-                menuRunnersList.Enabled = true;
-                menuChangeDelete.Enabled = true;
-            }
+            
             if (RaceIsSelected)
             {
                 btnStart.Visible = true;
@@ -131,8 +122,40 @@ namespace FinishLine
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 FileRW.WriteRunnersListToFile(saveFile.FileName);
+            }            
+        }
+
+        private void menuLoadRunnersList_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.InitialDirectory = FileRW.ProjectPath + FileRW.SAVE_PATH;
+            openFile.Filter = "Text files (*.txt)|*.txt";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                FileRW.ReadRunnersListFromFile(openFile.FileName);
             }
             
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuRunner_Click(object sender, EventArgs e)
+        {
+            if (RaceLogic._runners.Count == 0)
+            {
+                menuRunnersList.Enabled = false;
+                menuChangeDelete.Enabled = false;
+                menuSaveList.Enabled = false;
+            }
+            else
+            {
+                menuRunnersList.Enabled = true;
+                menuChangeDelete.Enabled = true;
+                menuSaveList.Enabled = true;
+            }
         }
     }
 }

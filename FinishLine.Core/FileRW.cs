@@ -14,11 +14,11 @@ namespace FinishLine.Core
         private static string _slovakShortName = "SlovakShortName";
         private static string _englishShortName = "EnglishShortName";
         private static string _officialShortName = "OfficialShortName";
-        public static string ProjectPath { get => Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\.."));}
+        public static string ProjectPath { get => Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..")); }
         public const string DATA_PATH = @"\Data\countries.csv";
         public const string SAVE_PATH = @"\Saves\";
-        public static List<Country> _countries= new List<Country>(250);
-        
+        public static List<Country> _countries = new List<Country>(250);
+
         public static void ReadCsvFile()
         {
 
@@ -34,17 +34,34 @@ namespace FinishLine.Core
                     Country country = new Country(record[_countryCode], record[_slovakShortName], record[_englishShortName], record[_officialShortName]);
                     _countries.Add(country);
                 }
-            }    
+            }
         }
 
         public static void WriteRunnersListToFile(string path)
         {
             StringBuilder sb = new StringBuilder();
-            foreach(var runner in RaceLogic._runners)
+            foreach (var runner in RaceLogic._runners)
             {
                 sb.AppendLine($"{runner.Key}\t{runner.Value.RunnerName}\t{runner.Value.Country}\t{runner.Value.Age}\t{runner.Value.Sex}");
-            }         
-                File.WriteAllText(path, sb.ToString());            
+            }
+            File.WriteAllText(path, sb.ToString());
+        }
+
+        public static void ReadRunnersListFromFile(string fileName)
+        {
+            RaceLogic._runners.Clear();
+            List<string> lines = new List<string>(100);
+            lines = File.ReadAllLines(fileName).ToList();
+            string[] zaznam = new string[5];
+            foreach (string line in lines)
+            {
+                if (line.Length > 0)
+                {
+                    zaznam = line.Split('\t');
+                    Runner runner = new Runner(zaznam[1], zaznam[2], int.Parse(zaznam[3]), zaznam[4]);
+                    RaceLogic._runners.Add(int.Parse(zaznam[0]), runner);
+                }                
+            }
         }
 
     }
