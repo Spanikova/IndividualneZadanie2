@@ -1,3 +1,0 @@
-1	1	dasda	00:00:01.5600028	Andorra
-2	2	grege	00:00:02.5116044	Andorra
-3	3	uyiy	00:00:03.5256062	Andorra

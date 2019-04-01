@@ -17,6 +17,7 @@ namespace FinishLine.Core
         public static string ProjectPath { get => Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\..")); }
         public const string DATA_PATH = @"\Data\countries.csv";
         public const string SAVE_PATH = @"\Saves\";
+        public const string SAVE_RACE_PATH = @"\Saves\Last_race";
         public static List<Country> _countries = new List<Country>(250);
 
         public static void ReadCsvFile()

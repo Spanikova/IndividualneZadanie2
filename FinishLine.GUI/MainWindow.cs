@@ -192,5 +192,13 @@ namespace FinishLine
                 lblWinnersCount.Text = $"Počet vyhodnocovaných miest: {RaceLogic._currentRace.NumOfWinners}";
             }
         }
+
+        private void menuSaveRace_Click(object sender, EventArgs e)
+        {
+            string path = FileRW.ProjectPath + FileRW.SAVE_RACE_PATH;
+            FileRW.WriteRaceSettingsToFile($"{path}/race_settings.txt");
+            FileRW.WriteRunnersListToFile($"{path}/runners_list.txt");
+            FileRW.WriteWinnersToFile($"{path}/winners_list.txt");
+        }
     }
 }

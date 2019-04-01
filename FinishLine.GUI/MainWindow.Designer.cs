@@ -70,6 +70,9 @@
             this.lblCurrentRank = new System.Windows.Forms.Label();
             this.pnlEndRace = new System.Windows.Forms.Panel();
             this.lblEndRace = new System.Windows.Forms.Label();
+            this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSaveRace = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLoadLastRace = new System.Windows.Forms.ToolStripMenuItem();
             menuNewRace = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.pnlButtonsStartStop.SuspendLayout();
@@ -93,6 +96,7 @@
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuFile,
             this.menuRace,
             this.menuRunner,
             this.menuSaveWinners});
@@ -141,35 +145,35 @@
             // menuRegister
             // 
             this.menuRegister.Name = "menuRegister";
-            this.menuRegister.Size = new System.Drawing.Size(164, 22);
+            this.menuRegister.Size = new System.Drawing.Size(180, 22);
             this.menuRegister.Text = "Registrácia";
             this.menuRegister.Click += new System.EventHandler(this.menuRegister_Click);
             // 
             // menuChangeDelete
             // 
             this.menuChangeDelete.Name = "menuChangeDelete";
-            this.menuChangeDelete.Size = new System.Drawing.Size(164, 22);
+            this.menuChangeDelete.Size = new System.Drawing.Size(180, 22);
             this.menuChangeDelete.Text = "Zmazať / Upraviť";
             this.menuChangeDelete.Click += new System.EventHandler(this.menuChangeDelete_Click);
             // 
             // menuRunnersList
             // 
             this.menuRunnersList.Name = "menuRunnersList";
-            this.menuRunnersList.Size = new System.Drawing.Size(164, 22);
+            this.menuRunnersList.Size = new System.Drawing.Size(180, 22);
             this.menuRunnersList.Text = "Zobraziť zoznam";
             this.menuRunnersList.Click += new System.EventHandler(this.menuRunnersList_Click);
             // 
             // menuSaveList
             // 
             this.menuSaveList.Name = "menuSaveList";
-            this.menuSaveList.Size = new System.Drawing.Size(164, 22);
+            this.menuSaveList.Size = new System.Drawing.Size(180, 22);
             this.menuSaveList.Text = "Uložiť zoznam";
             this.menuSaveList.Click += new System.EventHandler(this.menuSaveList_Click);
             // 
             // menuLoadRunnersList
             // 
             this.menuLoadRunnersList.Name = "menuLoadRunnersList";
-            this.menuLoadRunnersList.Size = new System.Drawing.Size(164, 22);
+            this.menuLoadRunnersList.Size = new System.Drawing.Size(180, 22);
             this.menuLoadRunnersList.Text = "Nahrať zoznam";
             this.menuLoadRunnersList.Click += new System.EventHandler(this.menuLoadRunnersList_Click);
             // 
@@ -485,6 +489,28 @@
             this.lblEndRace.TabIndex = 0;
             this.lblEndRace.Text = "Preteky bol ukončené";
             // 
+            // menuFile
+            // 
+            this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuSaveRace,
+            this.menuLoadLastRace});
+            this.menuFile.Name = "menuFile";
+            this.menuFile.Size = new System.Drawing.Size(50, 20);
+            this.menuFile.Text = "Súbor";
+            // 
+            // menuSaveRace
+            // 
+            this.menuSaveRace.Name = "menuSaveRace";
+            this.menuSaveRace.Size = new System.Drawing.Size(204, 22);
+            this.menuSaveRace.Text = "Uložiť preteky";
+            this.menuSaveRace.Click += new System.EventHandler(this.menuSaveRace_Click);
+            // 
+            // menuLoadLastRace
+            // 
+            this.menuLoadLastRace.Name = "menuLoadLastRace";
+            this.menuLoadLastRace.Size = new System.Drawing.Size(204, 22);
+            this.menuLoadLastRace.Text = "Nahrať posledné preteky";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -562,6 +588,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuSaveList;
         private System.Windows.Forms.ToolStripMenuItem menuLoadRunnersList;
         private System.Windows.Forms.ToolStripMenuItem menuSaveWinners;
+        private System.Windows.Forms.ToolStripMenuItem menuFile;
+        private System.Windows.Forms.ToolStripMenuItem menuSaveRace;
+        private System.Windows.Forms.ToolStripMenuItem menuLoadLastRace;
     }
 }
 

@@ -1,0 +1,4 @@
+1	dsada	Andorra	10	Muž
+2	fgdgdgd	Andorra	10	Muž
+3	hgfhfhfh	Andorra	10	Muž
+4	tryryr	Andorra	10	Muž
