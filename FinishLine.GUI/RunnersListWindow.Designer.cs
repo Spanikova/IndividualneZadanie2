@@ -31,9 +31,9 @@
             this.dataRunnersList = new System.Windows.Forms.DataGridView();
             this.ColRegNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataRunnersList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,9 +48,9 @@
             this.dataRunnersList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColRegNr,
             this.ColName,
-            this.ColCountry,
             this.ColAge,
-            this.ColSex});
+            this.ColSex,
+            this.ColCountry});
             this.dataRunnersList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataRunnersList.Location = new System.Drawing.Point(0, 0);
             this.dataRunnersList.Name = "dataRunnersList";
@@ -62,11 +62,11 @@
             // ColRegNr
             // 
             this.ColRegNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColRegNr.HeaderText = "Reg. číslo";
+            this.ColRegNr.HeaderText = "Štart. číslo";
             this.ColRegNr.Name = "ColRegNr";
             this.ColRegNr.ReadOnly = true;
             this.ColRegNr.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ColRegNr.Width = 81;
+            this.ColRegNr.Width = 83;
             // 
             // ColName
             // 
@@ -76,14 +76,6 @@
             this.ColName.ReadOnly = true;
             this.ColName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ColName.Width = 59;
-            // 
-            // ColCountry
-            // 
-            this.ColCountry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColCountry.HeaderText = "Krajina";
-            this.ColCountry.Name = "ColCountry";
-            this.ColCountry.ReadOnly = true;
-            this.ColCountry.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // ColAge
             // 
@@ -102,6 +94,14 @@
             this.ColSex.ReadOnly = true;
             this.ColSex.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ColSex.Width = 73;
+            // 
+            // ColCountry
+            // 
+            this.ColCountry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColCountry.HeaderText = "Krajina";
+            this.ColCountry.Name = "ColCountry";
+            this.ColCountry.ReadOnly = true;
+            this.ColCountry.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // RunnersListWindow
             // 
@@ -124,8 +124,8 @@
         private System.Windows.Forms.DataGridView dataRunnersList;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColRegNr;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColSex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCountry;
     }
 }

@@ -23,7 +23,8 @@ namespace FinishLine
             dataRunnersList.ColumnCount = 5;
             foreach (var runner in RaceLogic._runners)
             {
-                dataRunnersList.Rows.Add(RaceLogic.RegNrToString(runner.Key), runner.Value.RunnerName, runner.Value.Country, runner.Value.Age, runner.Value.Sex);
+                dataRunnersList.Rows.Add(RaceLogic.RegNrToString(runner.Key), runner.Value.RunnerName, runner.Value.Age, runner.Value.Sex, runner.Value.Country);
+                dataRunnersList.Sort(ColRegNr, ListSortDirection.Ascending);
             }
         }
     }

@@ -174,9 +174,9 @@
             this.lblRegNumber.AutoSize = true;
             this.lblRegNumber.Location = new System.Drawing.Point(2, 10);
             this.lblRegNumber.Name = "lblRegNumber";
-            this.lblRegNumber.Size = new System.Drawing.Size(90, 13);
+            this.lblRegNumber.Size = new System.Drawing.Size(87, 13);
             this.lblRegNumber.TabIndex = 11;
-            this.lblRegNumber.Text = "Registračné číslo";
+            this.lblRegNumber.Text = "Štartovacie číslo";
             // 
             // numRegNumber
             // 
